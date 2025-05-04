@@ -1,11 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=VT323&family=Press+Start+2P&family=Space+Mono&family=Share+Tech+Mono&family=IBM+Plex+Mono&family=Roboto+Mono&family=Fira+Code&family=Courier+Prime&display=swap');
 @import "tailwindcss";
 
-@font-face {
-  font-family: 'Azertype';
-  src: url('/fonts/azertyperegular.ttf') format('truetype');
-  font-display: swap;
-}
 
 @theme {
   --font-mono: "Share Tech Mono", monospace;
@@ -19,7 +14,6 @@
   --font-fira: "Fira Code", monospace;
   --font-courier: "Courier Prime", monospace;
   --font-monaco: "Monaco", monospace;
-  --font-azertype: "Azertype", monospace;
 
   --color-neon-green: #00FFB3;
 
