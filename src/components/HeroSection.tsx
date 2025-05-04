@@ -5,8 +5,14 @@ import GlitchText from "./GlitchText";
 
 const HeroSection: React.FC = () => {
   return (
-    <div className="bg-black min-h-screen text-white overflow-hidden">
-
+    <div className="bg-black min-h-screen text-white overflow-hidden relative">
+      <div className="absolute inset-0 z-0 bg-[radial-gradient(#00FFB3_1px,transparent_1px)] [background-size:20px_20px] opacity-10 " />
+      <div
+        className="absolute inset-0 z-10 pointer-events-none"
+        style={{
+          background: `repeating-linear-gradient(to bottom, rgba(255,255,255,0.02), rgba(255,255,255,0.02) 1px, transparent 1px, transparent 2px)`,
+        }}
+      />
 
       <nav className="relative z-20 flex justify-between items-center px-8 py-6 text-sm tracking-widest">
         <div className="flex flex-col space-y-2">
@@ -108,12 +114,12 @@ const HeroSection: React.FC = () => {
             <motion.div
               key={i}
               className={`
-        absolute w-${size} h-${size} rounded-full border-2 border-white
-        ${i === 0 ? "border-b-transparent border-l-transparent" : ""}
-        ${i === 1 ? "border-b-transparent border-r-transparent" : ""}
-        ${i === 2 ? "border-t-transparent border-r-transparent" : ""}
-        ${i === 3 ? "z-0 overflow-hidden" : ""}
-      `}
+                absolute rounded-full border-2 border-white
+                ${i === 0 ? "w-80 h-80 border-b-transparent border-l-transparent" : ""}
+                ${i === 1 ? "w-72 h-72 border-b-transparent border-r-transparent" : ""}
+                ${i === 2 ? "w-64 h-64 border-t-transparent border-r-transparent" : ""}
+                ${i === 3 ? "w-56 h-56 z-0 overflow-hidden" : ""}
+              `}
               animate={{ rotate: 360 }}
               transition={{
                 duration: 1.8 + i * 0.1,
