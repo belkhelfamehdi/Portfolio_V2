@@ -42,7 +42,7 @@ const ProjectsSection: React.FC = () => {
   const prev = () => setCurrent((index) => (index - 1 + projects.length) % projects.length);
 
   return (
-    <section className="min-h-screen text-neon-green font-mono flex flex-col items-center justify-center px-4 py-16">
+    <section id="projects" className="min-h-screen text-neon-green font-mono flex flex-col items-center justify-center px-4 py-16">
       <div className="flex flex-col md:flex-row items-center justify-between space-x-0 md:space-x-14 space-y-5 w-full max-w-7xl">
         <div className="relative w-full md:w-1/2 h-[400px] border border-neon-green shadow-[0_0_30px_#00FFB3] rounded-lg bg-black/60 backdrop-blur-sm">
           <AnimatePresence mode="wait">

@@ -5,7 +5,7 @@ import Photo from '../assets/MehdiBelkhelfa.png';
 const AboutSection: React.FC = () => {
   return (
     <section
-      id="about"
+      id="portfolio"
       className="min-h-screen w-full bg-black text-neon-green font-mono flex items-center justify-center px-4"
     >
       {/* Outer HUD glow frame */}

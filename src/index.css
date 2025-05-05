@@ -29,6 +29,10 @@ body {
   @apply bg-black
 }
 
+html {
+  @apply scroll-smooth
+}
+
 .glitch-text {
   position: relative;
   color: white;

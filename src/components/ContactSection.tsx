@@ -2,10 +2,9 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const contacts = [
-  { name: "LinkedIn", link: "https://linkedin.com/in/your-username", size: "w-40 h-40", top: "top-10", left: "left-1/2" },
-  { name: "Instagram", link: "https://instagram.com/your-username", size: "w-48 h-48", top: "top-48", left: "left-16" },
-  { name: "Twitter", link: "https://twitter.com/your-username", size: "w-36 h-36", top: "top-80", left: "left-1/3" },
-  { name: "Gmail", link: "mailto:your@email.com", size: "w-44 h-44", top: "top-40", left: "left-3/4" }
+  { name: "LinkedIn", link: "https://www.linkedin.com/in/mehdibelkhelfa/", size: "w-40 h-40", top: "top-10", left: "right-1/3" },
+  { name: "Github", link: "https://github.com/belkhelfamehdi", size: "w-48 h-48", top: "top-48", left: "left-16" },
+  { name: "Gmail", link: "mailto:mehdibelkhelfa6@gmail.com", size: "w-44 h-44", top: "top-40", left: "right-0" }
 ];
 
 const ContactSection: React.FC = () => {
@@ -21,7 +20,7 @@ const ContactSection: React.FC = () => {
         &lt;Connect with me/&gt;
       </h2>
 
-      <div className="relative w-full max-w-6xl h-[500px] z-10">
+      <div className="relative w-full max-w-5xl h-[500px] z-10 ">
         {contacts.map(({ name, link, size, top, left }) => (
           <motion.a
             key={name}

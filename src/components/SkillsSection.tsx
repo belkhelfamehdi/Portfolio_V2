@@ -60,6 +60,7 @@ const SkillsSection: React.FC = () => {
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
+      id="skills"
       className="min-h-screen w-full text-neon-green font-mono px-4 py-16 flex flex-col items-center justify-center relative"
     >
       {/* Background HUD Grid */}
