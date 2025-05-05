@@ -5,14 +5,8 @@ import GlitchText from "./GlitchText";
 
 const HeroSection: React.FC = () => {
   return (
-    <div className="bg-black min-h-screen text-white overflow-hidden relative">
-      <div className="absolute inset-0 z-0 bg-[radial-gradient(#00FFB3_1px,transparent_1px)] [background-size:20px_20px] opacity-10 " />
-      <div
-        className="absolute inset-0 z-10 pointer-events-none"
-        style={{
-          background: `repeating-linear-gradient(to bottom, rgba(255,255,255,0.02), rgba(255,255,255,0.02) 1px, transparent 1px, transparent 2px)`,
-        }}
-      />
+    <div className="min-h-screen text-white overflow-hidden relative">
+
 
       <nav className="relative z-20 flex justify-between items-center px-8 py-6 text-sm tracking-widest">
         <div className="flex flex-col space-y-2">
@@ -41,7 +35,7 @@ const HeroSection: React.FC = () => {
         </div>
 
         <div className="flex flex-col space-y-2">
-          {["//03. <Press/>", "//04. <Contact/>"].map((item, index) => (
+          {["//03. <Projects/>", "//04. <Contact/>"].map((item, index) => (
             <span
               key={index}
               className="relative group px-4 py-2 font-mono text-sm text-white hover:text-neon-green cursor-pointer transition-colors duration-500"
@@ -110,7 +104,7 @@ const HeroSection: React.FC = () => {
         </section>
 
         <section className="relative w-80 h-80 mr-16 hidden md:flex items-center justify-center group">
-          {[80, 72, 64, 56].map((size, i) => (
+          {[80, 72, 64, 56].map((_size, i) => (
             <motion.div
               key={i}
               className={`

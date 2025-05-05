@@ -8,7 +8,6 @@ const AboutSection: React.FC = () => {
       id="about"
       className="min-h-screen w-full bg-black text-neon-green font-mono flex items-center justify-center px-4"
     >
-
       {/* Outer HUD glow frame */}
       <div className="relative z-10 w-full max-w-6xl rounded-lg border border-neon-green shadow-[0_0_60px_#00FFB3] p-2 bg-black/90">
         {/* Top Label */}

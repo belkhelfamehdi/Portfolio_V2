@@ -15,7 +15,7 @@ const fakeCommands = [
   
     "init --education",
     "- M1 @ Ynov Lille (Expert Web Dev)",
-    "- Seeking M2 Apprenticeship – Sept 2025\n\n",
+    "- Seeking M2 Apprenticeship – Sept 2025",
   
     "init --status",
     "[ OK ] Available : Immediately",
