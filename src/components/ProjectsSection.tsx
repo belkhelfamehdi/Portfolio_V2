@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Project1Img from "../assets/MehdiBelkhelfa.png";
-import Project2Img from "../assets/projects/MySkilledCV.png";
+import Project1Img from "../assets/projects/mps.png";
+import Project2Img from "../assets/projects/mockup.png";
 import Project3Img from "../assets/projects/hardspace.png";
 import GlitchText from "./GlitchText";
 
