@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Project1Img from "../assets/MehdiBelkhelfa.png";
-import Project2Img from "../assets/MehdiBel_nobg.png";
+import Project2Img from "../assets/projects/MySkilledCV.png";
 import Project3Img from "../assets/projects/hardspace.png";
 import GlitchText from "./GlitchText";
-import { Typewriter } from "react-simple-typewriter";
 
 const projects = [
   {
@@ -39,18 +38,13 @@ const projects = [
 const ProjectsSection: React.FC = () => {
   const [current, setCurrent] = useState(0);
 
-  const next = () =>
-    setCurrent((index) => (index + 1) % projects.length);
-
-  const prev = () =>
-    setCurrent((index) => (index - 1 + projects.length) % projects.length);
+  const next = () => setCurrent((index) => (index + 1) % projects.length);
+  const prev = () => setCurrent((index) => (index - 1 + projects.length) % projects.length);
 
   return (
     <section className="min-h-screen text-neon-green font-mono flex flex-col items-center justify-center px-4 py-16">
-      {/* Projects */}
-      <div className="flex items-center justify-center space-x-5 w-full">
-        {/* Left side (image) */}
-        <div className="relative w-lg h-lg aspect-square rounded-full overflow-hidden">
+      <div className="flex flex-col md:flex-row items-center justify-between space-x-0 md:space-x-14 space-y-5 w-full max-w-7xl">
+        <div className="relative w-full md:w-1/2 h-[400px] border border-neon-green shadow-[0_0_30px_#00FFB3] rounded-lg bg-black/60 backdrop-blur-sm">
           <AnimatePresence mode="wait">
             <motion.div
               key={current}
@@ -62,42 +56,52 @@ const ProjectsSection: React.FC = () => {
             >
               <img
                 src={projects[current].image}
-                alt=""
-                className="w-full h-full object-contain"
+                alt="project"
+                className="w-full h-full object-fill rounded-lg"
               />
             </motion.div>
           </AnimatePresence>
         </div>
 
-        {/* Right side (text) */}
-        <div className="flex flex-col items-start justify-center w-full max-w-2xl">
+        <div className="flex flex-col items-start justify-center w-full md:w-1/2 mt-10 md:mt-0">
+        <AnimatePresence mode="wait">
+            <motion.div
+              key={current}
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 20 }}
+              transition={{ duration: 0.4 }}
+              className="w-full h-full"
+            >
           <p className="text-gray-500 font-mono text-xl mb-2">&lt;p&gt;</p>
-          <div className="flex flex-col items-start gap-7 max-w-full">
-            <h1 className="text-2xl md:text-4xl font-bold font-orbitron text-neon-green leading-tight ml-10 relative">
-              <span className="relative z-10"><GlitchText text={projects[current].title} delay={-10}/></span>
-              <span className="absolute inset-0 blur-lg opacity-50 text-white z-0">
+          <div className="flex flex-col items-start gap-7">
+            <h1 className="text-2xl md:text-4xl font-bold font-orbitron text-neon-green leading-tight relative">
+              <span className="relative z-10">
+                <GlitchText text={projects[current].title} delay={-10} />
+              </span>
+              <span className="absolute inset-0 blur-md opacity-40 text-white z-0">
                 <GlitchText text={projects[current].title} delay={-10} />
               </span>
             </h1>
-            <p className="text-gray-400 font-mono text-md ml-10 mt-1">
+            <p className="text-gray-400 font-mono text-md">
               {projects[current].description}
             </p>
-            <h2 className="text-xl font-bold font-orbitron text-neon-green leading-tight ml-10">
-              {projects[current].role}
+            <h2 className="text-lg font-bold font-orbitron text-neon-green">
+              <GlitchText text={projects[current].role} delay={-10} />
             </h2>
           </div>
           <div className="flex items-start mt-2 text-xl text-gray-500 font-mono">
             <span>&lt;/p&gt;</span>
           </div>
+          </motion.div>
+          </AnimatePresence>
         </div>
       </div>
 
-      {/* Carousel Navigation */}
-      <div className="flex items-center justify-between w-3/5 mt-14 space-x-0">
-        {/* Prev */}
+      <div className="flex items-center justify-between w-3/5 mt-14">
         <button
           onClick={prev}
-          className="w-14 h-14 rounded-full border border-white flex items-center justify-center group transition hover:border-neon-green relative"
+          className="w-14 h-14 rounded-full border border-neon-green bg-black/30 hover:bg-neon-green/10 flex items-center justify-center group transition relative"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -111,18 +115,16 @@ const ProjectsSection: React.FC = () => {
           </svg>
         </button>
 
-        {/* Progress Bar */}
-        <div className="w-xl h-2 bg-gray-800 rounded-full overflow-hidden relative">
+        <div className="w-full max-w-lg h-2 bg-gray-800 rounded-full overflow-hidden relative ">
           <div
             className="absolute left-0 top-0 h-full bg-neon-green transition-all duration-500"
             style={{ width: `${((current + 1) / projects.length) * 100}%` }}
           />
         </div>
 
-        {/* Next */}
         <button
           onClick={next}
-          className="w-20 h-20 rounded-full border border-white flex items-center justify-center group transition hover:border-neon-green relative"
+          className="w-20 h-20 rounded-full border border-neon-green bg-black/30 hover:bg-neon-green/10 flex items-center justify-center group transition relative"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

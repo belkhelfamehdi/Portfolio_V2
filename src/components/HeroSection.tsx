@@ -10,7 +10,7 @@ const HeroSection: React.FC = () => {
 
       <nav className="relative z-20 flex justify-between items-center px-8 py-6 text-sm tracking-widest">
         <div className="flex flex-col space-y-2">
-          {["//01. <Home/>", "//02. <Portfolio/>"].map((item, index) => (
+          {["//01. <Portfolio/>", "//02. <Projects/>"].map((item, index) => (
             <span
               key={index}
               className="relative group px-4 py-2 font-mono text-sm text-white hover:text-neon-green cursor-pointer transition-colors duration-500"
@@ -35,7 +35,7 @@ const HeroSection: React.FC = () => {
         </div>
 
         <div className="flex flex-col space-y-2">
-          {["//03. <Projects/>", "//04. <Contact/>"].map((item, index) => (
+          {["//03. <Skills/>", "//04. <Contact/>"].map((item, index) => (
             <span
               key={index}
               className="relative group px-4 py-2 font-mono text-sm text-white hover:text-neon-green cursor-pointer transition-colors duration-500"
