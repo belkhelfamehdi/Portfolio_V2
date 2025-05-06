@@ -7,30 +7,30 @@ import GlitchText from "./GlitchText";
 
 const projects = [
   {
-    title: "CV Parser UI",
-    description:
-      "A streamlined frontend interface for parsing and reviewing CVs. Integrated with parsing APIs and built with React + Tailwind.",
-    stack: "React, Tailwind, Framer Motion",
-    image: Project1Img,
-    role: "Frontend Developer",
-    link: "#",
-  },
-  {
     title: "ERP Module - Production Planning",
     description:
-      "Custom Odoo module for optimizing production workflows at CHU. Backend logic and interface co-developed.",
-    stack: "Odoo, Python, PostgreSQL",
-    image: Project2Img,
-    role: "FullStack Dev",
+      "Developed a customized production planning solution for ISATIS, fully integrated into the Odoo ERP system. The module introduces a dynamic matrix interface to manage and forecast manufacturing operations across multiple time periods, while maintaining alignment with Odoo's inventory, sales, MRP, and procurement features. Built using Python within the Odoo framework, with interactive frontend components crafted using OWL (Odoo Web Library) and PostgreSQL for data persistence, the system supports automation, improves visibility, and enhances supply chain decision-making. Delivered through Agile development cycles.",
+    stack: "Odoo Framework(Python), OWL(JavaScript), PostgreSQL",
+    image: Project1Img,
+    role: "FullStack Developer & Analyst",
     link: "#",
   },
   {
-    title: "Portfolio V2",
+    title: "MySkilledCV – Resume Screening Platform",
     description:
-      "This portfolio — built with Vite, styled like a cyberpunk HUD terminal. Focused on motion, theme, and interactivity.",
-    stack: "Vite, React, Tailwind",
+      "MySkilledCV is an intelligent recruitment platform that simplifies the hiring process for companies. It allows employers to upload resumes and instantly receive ranked candidate insights powered by AI. The platform offers a smooth user experience, real-time updates, and intuitive tools to manage job postings and applicants more effectively. It’s designed to enhance decision-making, reduce manual screening effort, and accelerate the hiring workflow.",
+    stack: "Spring Boot, Angular, TailwindCSS, PostgreSQL",
+    image: Project2Img,
+    role: "FullStack Developer",
+    link: "#",
+  },
+  {
+    title: "HardSpace – E-Commerce Platform",
+    description:
+      "HardSpace is a web-based e-commerce platform designed for the sale and distribution of computer hardware. The platform offers a complete interface for customers, suppliers, and administrators, enabling real-time product management, order processing, and user interaction. Built with Laravel 10 for robust backend logic, Tailwind CSS for a responsive and modern UI, and MySQL for reliable data management, the system delivers a scalable and efficient shopping experience tailored for tech enthusiasts and vendors alike.",
+    stack: "Laravel, TailwindCss, MySQL",
     image: Project3Img,
-    role: "Designer & Engineer",
+    role: "FullStack Developer",
     link: "#",
   },
 ];
@@ -43,8 +43,8 @@ const ProjectsSection: React.FC = () => {
 
   return (
     <section id="projects" className="min-h-screen text-neon-green font-mono flex flex-col items-center justify-center px-4 py-16">
-      <div className="flex flex-col md:flex-row items-center justify-between space-x-0 md:space-x-14 space-y-5 w-full max-w-7xl">
-        <div className="relative w-full md:w-1/2 h-[500px] border border-neon-green shadow-[0_0_30px_#00FFB3] rounded-lg bg-black/60 backdrop-blur-sm">
+      <div className="flex flex-col md:flex-row items-center justify-between space-x-0 space-y-5 w-full max-w-7xl">
+        <div className="relative w-full md:w-2/5 h-[400px] border border-neon-green shadow-[0_0_30px_#00FFB3] rounded-lg bg-black/60 backdrop-blur-sm">
           <AnimatePresence mode="wait">
             <motion.div
               key={current}
@@ -83,12 +83,18 @@ const ProjectsSection: React.FC = () => {
                 <GlitchText text={projects[current].title} delay={-10} />
               </span>
             </h1>
-            <p className="text-gray-400 font-mono text-md">
+            <div className="w-full px-4 py-2 border border-neon-green bg-black/50 rounded-md shadow-[0_0_10px_#00FFB3]">
+    <p className="text-xs text-neon-green font-mono tracking-wide">
+      &lt;tech-stack&gt; {projects[current].stack} &lt;/tech-stack&gt;
+    </p>
+  </div>
+            <p className="text-gray-400 font-mono text-md leading-normal">
               {projects[current].description}
             </p>
             <h2 className="text-lg font-bold font-orbitron text-neon-green">
               <GlitchText text={projects[current].role} delay={-10} />
             </h2>
+            
           </div>
           <div className="flex items-start mt-2 text-xl text-gray-500 font-mono">
             <span>&lt;/p&gt;</span>
