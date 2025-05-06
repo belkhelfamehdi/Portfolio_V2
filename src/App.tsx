@@ -8,7 +8,7 @@ import ContactSection from './components/ContactSection';
 
 const App : React.FC = () => {
   return (
-    <div className="container relative mx-auto px-20 bg-black min-h-screen text-whit overflow-x-hidden">
+    <div className="container relative mx-auto md:px-20 bg-black min-h-screen text-whit overflow-x-hidden">
             <div className="absolute inset-0 z-0 bg-[radial-gradient(#00FFB3_1px,transparent_1px)] [background-size:20px_20px] opacity-20 " />
       <div
         className="absolute inset-0 z-10 pointer-events-none"

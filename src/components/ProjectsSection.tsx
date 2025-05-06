@@ -44,9 +44,6 @@ const ProjectsSection: React.FC = () => {
   return (
     <section id="projects" className="min-h-screen text-neon-green font-mono flex flex-col items-center justify-center px-4 py-16 relative">
       {/* HUD Label */}
-      <div className="absolute -top-4 left-6 px-3 text-xs font-mono text-neon-green bg-black border border-neon-green rounded z-10">
-        [ PROJECT.MODULE / ACTIVE ]
-      </div>
 
       <div className="flex flex-col md:flex-row items-center justify-between space-x-0 space-y-5 w-full max-w-7xl">
         {/* Image */}

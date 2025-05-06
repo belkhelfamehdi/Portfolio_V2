@@ -7,10 +7,8 @@ import CV from "../assets/CV.pdf";
 const HeroSection: React.FC = () => {
   return (
     <div className="min-h-screen text-white overflow-hidden relative">
-
-
-<nav className="relative z-20 flex justify-between items-center px-8 py-6 text-sm tracking-widest">
-        <div className="flex flex-col space-y-2">
+      <nav className="relative z-20 flex flex-wrap md:flex-nowrap justify-between items-center px-4 md:px-8 py-6 text-sm tracking-widest gap-4">
+        <div className="flex flex-col space-y-2 items-center md:items-start w-full md:w-auto">
           {[
             { label: "//01. <Portfolio/>", href: "#portfolio" },
             { label: "//02. <Projects/>", href: "#projects" },
@@ -31,11 +29,11 @@ const HeroSection: React.FC = () => {
           ))}
         </div>
 
-        <div className="w-44 h-auto">
+        <div className="w-24 md:w-44 h-auto mx-auto md:mx-0">
           <img src={Logo} alt="Logo MehdiBel" className="w-full object-contain" />
         </div>
 
-        <div className="flex flex-col space-y-2">
+        <div className="flex flex-col space-y-2 items-center md:items-end w-full md:w-auto">
           {[
             { label: "//03. <Skills/>", href: "#skills" },
             { label: "//04. <Contact/>", href: "#contact" },
@@ -57,16 +55,16 @@ const HeroSection: React.FC = () => {
         </div>
       </nav>
 
-      <div className="relative z-20 flex items-center justify-between px-6 md:px-24">
-        <section className="my-20">
-          <p className="text-gray-500 font-mono text-xl mb-6">
+      <div className="relative z-20 flex flex-col md:flex-row items-center justify-between px-4 md:px-24">
+        <section className="my-10 md:my-20 text-center md:text-left max-w-xl">
+          <p className="text-gray-500 font-mono text-lg md:text-xl mb-6">
             &lt;p&gt;<span className="text-neon-green">This is</span>&lt;/p&gt;
           </p>
 
-          <p className="text-gray-500 font-mono text-md ml-10">&lt;h1&gt;</p>
+          <p className="text-gray-500 font-mono text-md md:ml-10">&lt;h1&gt;</p>
 
           <h1
-            className="text-5xl md:text-7xl font-bold font-orbitron text-white leading-tight ml-14 relative"
+            className="text-[clamp(2.5rem,5vw,4.5rem)] font-bold font-orbitron text-white leading-tight md:ml-14 relative"
             data-text="BELKHELFA MEHDI"
           >
             <span className="relative z-10 whitespace-pre-line">
@@ -81,11 +79,11 @@ const HeroSection: React.FC = () => {
             </span>
           </h1>
 
-          <p className="text-gray-500 font-mono text-md ml-10 mt-1">
+          <p className="text-gray-500 font-mono text-md md:ml-10 mt-1">
             &lt;/h1&gt;
           </p>
 
-          <div className="flex items-start gap-2 mt-6 text-xl text-gray-500 font-mono">
+          <div className="flex flex-wrap items-start gap-2 mt-6 text-lg md:text-xl text-gray-500 font-mono justify-center md:justify-start">
             <span>&lt;p&gt;</span>
             <span className="text-neon-green">
               <Typewriter
@@ -106,45 +104,43 @@ const HeroSection: React.FC = () => {
             <span>&lt;/p&gt;</span>
           </div>
 
-          <div className="w-48 h-1 bg-neon-green mt-4 animate-pulse blur-sm shadow-[0_0_10px_#00FFB3]" />
+          <div className="w-32 md:w-48 h-1 bg-neon-green mt-4 animate-pulse blur-sm shadow-[0_0_10px_#00FFB3]" />
         </section>
 
-        <section className="relative w-80 h-80 mr-16 hidden md:flex items-center justify-center group">
-        <a
-  href={CV}
-  download
-  className="relative w-80 h-80 mr-16 hidden md:flex items-center justify-center group"
->
-  {[80, 72, 64, 56].map((_size, i) => (
-    <motion.div
-      key={i}
-      className={`
-        absolute rounded-full border-2 border-white
-        ${i === 0 ? "w-80 h-80 border-b-transparent border-l-transparent" : ""}
-        ${i === 1 ? "w-72 h-72 border-b-transparent border-r-transparent" : ""}
-        ${i === 2 ? "w-64 h-64 border-t-transparent border-r-transparent" : ""}
-        ${i === 3 ? "w-56 h-56 z-0 overflow-hidden" : ""}
-      `}
-      animate={{ rotate: 360 }}
-      transition={{
-        duration: 1.8 + i * 0.1,
-        repeat: Infinity,
-        ease: "linear",
-      }}
-    >
-      {i === 3 && (
-        <div className="absolute inset-0 p-2 bg-neon-green scale-0 group-hover:scale-100 transition-all duration-500 rounded-full pointer-events-none" />
-      )}
-    </motion.div>
-  ))}
+        <section className="relative w-64 h-64 md:w-80 md:h-80 mt-10 md:mt-0 flex items-center justify-center group">
+          <a
+            href={CV}
+            download
+            className="relative w-full h-full flex items-center justify-center group"
+          >
+            {["w-full", "w-[90%]", "w-[80%]", "w-[70%]"].map((size, i) => (
+              <motion.div
+                key={i}
+                className={`absolute rounded-full border-2 border-white ${size} aspect-square
+                  ${i === 0 ? "border-b-transparent border-l-transparent" : ""}
+                  ${i === 1 ? "border-b-transparent border-r-transparent" : ""}
+                  ${i === 2 ? "border-t-transparent border-r-transparent" : ""}
+                  ${i === 3 ? "z-0 overflow-hidden" : ""}
+                `}
+                animate={{ rotate: 360 }}
+                transition={{
+                  duration: 1.8 + i * 0.1,
+                  repeat: Infinity,
+                  ease: "linear",
+                }}
+              >
+                {i === 3 && (
+                  <div className="absolute inset-0 p-2 bg-neon-green scale-0 group-hover:scale-100 transition-all duration-500 rounded-full pointer-events-none" />
+                )}
+              </motion.div>
+            ))}
 
-  <div className="z-10 text-center group-hover:scale-110 transition-transform duration-500">
-    <p className="text-neon-green group-hover:text-black font-mono text-lg tracking-wide transition-all duration-500">
-      <GlitchText text="&lt;Download CV/&gt;" delay={5} />
-    </p>
-  </div>
-</a>
-
+            <div className="z-10 text-center group-hover:scale-110 transition-transform duration-500">
+              <p className="text-neon-green group-hover:text-black font-mono text-lg tracking-wide transition-all duration-500">
+                <GlitchText text="&lt;Download CV/&gt;" delay={5} />
+              </p>
+            </div>
+          </a>
         </section>
       </div>
     </div>
