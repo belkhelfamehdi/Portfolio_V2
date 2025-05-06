@@ -90,9 +90,10 @@ const HeroSection: React.FC = () => {
             <span className="text-neon-green">
               <Typewriter
                 words={[
-                  "Entrepreneur",
                   "FullStack Developer",
                   "Creator of Interfaces",
+                  "Always Learning",
+                  "Curious Mind",
                 ]}
                 loop={true}
                 cursor
