@@ -95,8 +95,8 @@ const SkillsSection: React.FC = () => {
                 {`// ${category}`}
               </div>
               <div className="mt-4">
-                {items.map((skill, idx) => (
-                  <SkillBar key={skill} label={skill} index={idx} />
+                {items.map((skill) => (
+                  <SkillBar key={skill} label={skill} />
                 ))}
               </div>
             </motion.div>
