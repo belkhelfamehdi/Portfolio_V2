@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 const skillPercents: Record<string, number> = {
@@ -27,32 +26,37 @@ const skillPercents: Record<string, number> = {
     Tools: ["Git", "GitLab CI/CD", "Docker", "Firebase"]
   };
 
-const SkillBar = ({ label, index }: { label: string; index: number }) => {
-  const [width, setWidth] = useState("0%");
-
-  useEffect(() => {
+  const SkillBar = ({ label }: { label: string }) => {
     const target = skillPercents[label] || 70;
-    const timeout = setTimeout(() => setWidth(`${target}%`), 200 + index * 100);
-    return () => clearTimeout(timeout);
-  }, [label, index]);
-
-  return (
-    <div className="w-full mb-4 group">
-      <div className="flex justify-between text-xs text-neon-green font-mono tracking-widest mb-1">
-        <span>{`> ${label}`}</span>
-        <span>{`${skillPercents[label] || 70}%`}</span>
-      </div>
-      <div className="w-full h-3 rounded-sm overflow-hidden border border-neon-green shadow-inner">
-        <motion.div
-          className="h-full bg-neon-green shadow-[0_0_10px_#00FFB3] group-hover:shadow-[0_0_20px_#00FFB3]"
-          initial={{ width: 0 }}
-          animate={{ width }}
-          transition={{ duration: 1, ease: "easeOut" }}
-        />
-      </div>
-    </div>
-  );
-};
+  
+    return (
+      <motion.div
+        className="w-full mb-4 group"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={{
+          hidden: { opacity: 0, y: 10 },
+          visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+        }}
+      >
+        <div className="flex justify-between text-xs text-neon-green font-mono tracking-widest mb-1">
+          <span>{`> ${label}`}</span>
+          <span>{`${target}%`}</span>
+        </div>
+        <div className="w-full h-3 rounded-sm overflow-hidden border border-neon-green shadow-inner">
+          <motion.div
+            className="h-full bg-neon-green shadow-[0_0_10px_#00FFB3] group-hover:shadow-[0_0_20px_#00FFB3]"
+            initial={{ width: "0%" }}
+            whileInView={{ width: `${target}%` }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
+            viewport={{ once: true }}
+          />
+        </div>
+      </motion.div>
+    );
+  };
+  
 
 const SkillsSection: React.FC = () => {
   return (
