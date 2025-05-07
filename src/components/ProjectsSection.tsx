@@ -14,7 +14,7 @@ const projects = [
     stack: "Odoo Framework (Python), OWL (JavaScript), PostgreSQL",
     image: Project1Img,
     role: "FullStack Developer & Analyst",
-    link: "#",
+    link: "https://github.com/belkhelfamehdi/Plan-directeur-de-production",
   },
   {
     title: "MySkilledCV – Resume Screening Platform",
@@ -23,7 +23,7 @@ const projects = [
     stack: "Spring Boot, Angular, TailwindCSS, PostgreSQL",
     image: Project2Img,
     role: "FullStack Developer",
-    link: "#",
+    link: "https://github.com/belkhelfamehdi/MySkilledCV_Frontend",
   },
   {
     title: "HardSpace – E-Commerce Platform",
@@ -32,7 +32,7 @@ const projects = [
     stack: "Laravel, TailwindCSS, MySQL",
     image: Project3Img,
     role: "FullStack Developer",
-    link: "#",
+    link: "https://github.com/belkhelfamehdi/E-commerce-HardSpace",
   },
   {
     title: "AnChatty – Realtime Messaging Platform",
