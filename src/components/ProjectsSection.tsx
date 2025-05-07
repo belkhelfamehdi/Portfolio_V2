@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Project1Img from "../assets/projects/mps.png";
 import Project2Img from "../assets/projects/mockup.png";
 import Project3Img from "../assets/projects/hardspace.png";
+import Project4Img from "../assets/projects/anchatty.png";
 import GlitchText from "./GlitchText";
 
 const projects = [
@@ -33,6 +34,15 @@ const projects = [
     role: "FullStack Developer",
     link: "#",
   },
+  {
+    title: "AnChatty – Realtime Messaging Platform",
+    description: "AnChatty is a sleek, modern messaging web application inspired by WhatsApp. It features real-time communication, user presence detection, and responsive chat UI with emoji support. Built with Next.js and TypeScript, it leverages Stream for chat infrastructure and Clerk for secure authentication. The app focuses on seamless interaction, intuitive design, and fast performance, delivering a smooth and engaging user experience.",
+    stack: "TypeScript, Next.js, TailwindCSS, Clerk Auth, Stream",
+    image: Project4Img,
+    role: "FullStack Developer",
+    link: "https://github.com/belkhelfamehdi/anchatty",
+  }
+  
 ];
 
 const ProjectsSection: React.FC = () => {
@@ -112,7 +122,7 @@ const ProjectsSection: React.FC = () => {
                   <a
                     href={projects[current].link}
                     target="_blank"
-                    className="mt-3 px-4 py-2 border border-neon-green rounded font-mono text-xs text-neon-green hover:bg-neon-green/20 transition"
+                    className=" px-4 py-2 border border-neon-green rounded font-mono text-xs text-neon-green hover:bg-neon-green/20 transition"
                   >
                     View Project →
                   </a>
