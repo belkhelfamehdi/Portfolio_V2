@@ -41,7 +41,7 @@ const projects = [
     stack: "TypeScript, Next.js, TailwindCSS, Clerk Auth, Stream",
     image: Project4Img,
     role: "FullStack Developer",
-    link: "https://anchatty-ksqet21js-belkhelfamehdis-projects.vercel.app/",
+    link: "https://anchatty-git-master-belkhelfamehdis-projects.vercel.app/",
   },
 ];
 
