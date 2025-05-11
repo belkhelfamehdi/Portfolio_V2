@@ -13,9 +13,9 @@ const projects = [
     description:
       "This app allows users to generate personalized interview questions and answers based on their role and experience, take notes, and review topics using AI-generated explanations. Includes role-based sessions, concept breakdowns, and a clean accordion UI for focused learning.",
     stack: "React, Node.js, TailwindCSS, MongoDB, Gemini API",
-    image: Project5Img, // Make sure to import and assign this image
+    image: Project5Img,
     role: "FullStack Developer",
-    link: "https://github.com/belkhelfamehdi/Yalla-Interview", // Update with the correct repo or demo link
+    link: "https://yalla-interview-frontend-git-master-belkhelfamehdis-projects.vercel.app/",
   },
   {
     title: "ERP Module - Production Planning",
