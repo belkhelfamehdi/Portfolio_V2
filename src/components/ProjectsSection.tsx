@@ -4,9 +4,19 @@ import Project1Img from "../assets/projects/mps.png";
 import Project2Img from "../assets/projects/mockup.png";
 import Project3Img from "../assets/projects/hardspace.png";
 import Project4Img from "../assets/projects/anchatty.png";
+import Project5Img from "../assets/projects/yalla_interview.png";
 import GlitchText from "./GlitchText";
 
 const projects = [
+  {
+    title: "Yalla Interview – AI Interview Prep App",
+    description:
+      "This app allows users to generate personalized interview questions and answers based on their role and experience, take notes, and review topics using AI-generated explanations. Includes role-based sessions, concept breakdowns, and a clean accordion UI for focused learning.",
+    stack: "React, Node.js, TailwindCSS, MongoDB, Gemini API",
+    image: Project5Img, // Make sure to import and assign this image
+    role: "FullStack Developer",
+    link: "https://github.com/belkhelfamehdi/Yalla-Interview", // Update with the correct repo or demo link
+  },
   {
     title: "ERP Module - Production Planning",
     description:
@@ -44,6 +54,7 @@ const projects = [
     link: "https://anchatty-git-master-belkhelfamehdis-projects.vercel.app/",
   },
 ];
+
 
 const ProjectsSection: React.FC = () => {
   const [current, setCurrent] = useState(0);
@@ -120,7 +131,7 @@ const ProjectsSection: React.FC = () => {
                 </h1>
 
                 {/* Stack */}
-                <div className="flex flex-wrap gap-2 px-2 py-2 bg-black/50 border border-neon-green rounded shadow-[0_0_10px_#00FFB3]">
+                <div className="flex flex-wrap items-center justify-center md:w-fit gap-2 px-2 py-2 bg-black/50 border border-neon-green rounded-lg shadow-[0_0_10px_#00FFB3]">
                   {projects[current].stack.split(", ").map((tech) => (
                     <span
                       key={tech}
