@@ -9,7 +9,7 @@ const AboutSection: React.FC = () => {
       className="min-h-screen w-full bg-black text-neon-green font-mono flex items-center justify-center px-4 py-12"
     >
       {/* Outer HUD glow frame */}
-      <div className="relative z-10 w-full max-w-6xl rounded-lg border border-neon-green shadow-[0_0_60px_#00FFB3] p-2 bg-black/90">
+      <div className="relative z-10 w-full max-w-6xl rounded-lg border border-neon-green shadow-[0_0_30px_#00FFB3] p-2 bg-black/90">
         {/* Top Label */}
         <div className="absolute -top-4 left-4 text-xs bg-black px-2 text-neon-green tracking-wider border border-neon-green rounded">
           [ IDENTITY.CONSOLE ]

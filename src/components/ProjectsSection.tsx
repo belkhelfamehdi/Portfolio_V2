@@ -8,6 +8,15 @@ import Project5Img from "../assets/projects/yalla_interview.png";
 import GlitchText from "./GlitchText";
 
 const projects = [
+    {
+    title: "AnChatty – Realtime Messaging Platform",
+    description:
+      "A sleek messaging web app inspired by WhatsApp. Built with Next.js and TypeScript, featuring real-time chat, user presence, and emoji support. Uses Stream for infrastructure and Clerk for authentication.",
+    stack: "TypeScript, Next.js, TailwindCSS, Clerk Auth, Stream",
+    image: Project4Img,
+    role: "FullStack Developer",
+    link: "https://anchatty-git-master-belkhelfamehdis-projects.vercel.app/",
+  },
   {
     title: "Yalla Interview – AI Interview Prep App",
     description:
@@ -16,6 +25,15 @@ const projects = [
     image: Project5Img,
     role: "FullStack Developer",
     link: "https://yalla-interview-frontend-git-master-belkhelfamehdis-projects.vercel.app/",
+  },
+    {
+    title: "MySkilledCV – Resume Screening Platform",
+    description:
+      "An intelligent recruitment platform that analyzes uploaded resumes and ranks candidates using AI. Offers a modern dashboard with drag-and-drop functionality, real-time updates, and efficient applicant management.",
+    stack: "Spring Boot, Angular, TailwindCSS, PostgreSQL",
+    image: Project2Img,
+    role: "FullStack Developer",
+    link: "https://github.com/belkhelfamehdi/MySkilledCV_Frontend",
   },
   {
     title: "ERP Module - Production Planning",
@@ -27,15 +45,6 @@ const projects = [
     link: "https://github.com/belkhelfamehdi/Plan-directeur-de-production",
   },
   {
-    title: "MySkilledCV – Resume Screening Platform",
-    description:
-      "An intelligent recruitment platform that analyzes uploaded resumes and ranks candidates using AI. Offers a modern dashboard with drag-and-drop functionality, real-time updates, and efficient applicant management.",
-    stack: "Spring Boot, Angular, TailwindCSS, PostgreSQL",
-    image: Project2Img,
-    role: "FullStack Developer",
-    link: "https://github.com/belkhelfamehdi/MySkilledCV_Frontend",
-  },
-  {
     title: "HardSpace – E-Commerce Platform",
     description:
       "A web-based platform for selling computer hardware. Features include real-time product and order management, user dashboards, and admin tools. Built with Laravel 10, Tailwind CSS, and MySQL.",
@@ -43,15 +52,6 @@ const projects = [
     image: Project3Img,
     role: "FullStack Developer",
     link: "https://github.com/belkhelfamehdi/E-commerce-HardSpace",
-  },
-  {
-    title: "AnChatty – Realtime Messaging Platform",
-    description:
-      "A sleek messaging web app inspired by WhatsApp. Built with Next.js and TypeScript, featuring real-time chat, user presence, and emoji support. Uses Stream for infrastructure and Clerk for authentication.",
-    stack: "TypeScript, Next.js, TailwindCSS, Clerk Auth, Stream",
-    image: Project4Img,
-    role: "FullStack Developer",
-    link: "https://anchatty-git-master-belkhelfamehdis-projects.vercel.app/",
   },
 ];
 
