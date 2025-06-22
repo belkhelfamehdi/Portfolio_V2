@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Typewriter } from "react-simple-typewriter";
 import Logo from "../assets/MehdiBel_nobg.png";
@@ -5,42 +6,86 @@ import GlitchText from "./GlitchText";
 import CV from "../assets/CV.pdf";
 
 const HeroSection: React.FC = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const links = [
+    { label: "//01. <Portfolio/>", href: "#portfolio" },
+    { label: "//02. <Projects/>", href: "#projects" },
+    { label: "//03. <Skills/>", href: "#skills" },
+    { label: "//04. <Contact/>", href: "#contact" },
+  ];
+
   return (
     <div className="min-h-screen text-white overflow-hidden relative">
-      <nav className="relative z-20 flex flex-wrap md:flex-nowrap justify-between items-center px-4 md:px-8 py-6 text-sm tracking-widest gap-4">
-        <div className="flex flex-col space-y-2 items-center md:items-start w-full md:w-auto">
-          {[
-            { label: "//01. <Portfolio/>", href: "#portfolio" },
-            { label: "//02. <Projects/>", href: "#projects" },
-          ].map(({ label, href }, index) => (
-            <a
-              key={index}
-              href={href}
-              className="relative group px-4 py-2 font-mono text-sm text-white hover:text-neon-green cursor-pointer transition-colors duration-500"
-            >
-              <span className="invisible block">{label}</span>
-              <span className="absolute inset-0 flex items-center transition-transform duration-500 ease-in-out group-hover:translate-x-5">
-                <span>
-                  <GlitchText text={label} />
-                </span>
-              </span>
-              <span className="absolute inset-0 border border-neon-green scale-x-0 group-hover:scale-x-100 origin-center opacity-0 group-hover:opacity-100 transition-transform duration-300 ease-out pointer-events-none group-hover:shadow-[0_0_10px_#00FFB3]" />
-            </a>
-          ))}
-        </div>
-
-        <div className="w-24 md:w-44 h-auto mx-auto md:mx-0">
+      <nav className="relative z-20 flex items-center justify-between px-4 md:px-8 py-6 text-sm tracking-widest">
+        {/* Logo */}
+        <div className="w-24 md:w-44 h-auto">
           <img src={Logo} alt="Logo MehdiBel" className="w-full object-contain" />
         </div>
 
-        <div className="flex flex-col space-y-2 items-center md:items-end w-full md:w-auto">
-          {[
-            { label: "//03. <Skills/>", href: "#skills" },
-            { label: "//04. <Contact/>", href: "#contact" },
-          ].map(({ label, href }, index) => (
+        {/* Desktop Links */}
+        <div className="hidden md:flex flex-1 items-center justify-between gap-10">
+          <div className="flex flex-col space-y-2 items-start">
+            {links.slice(0, 2).map(({ label, href }, index) => (
+              <a
+                key={index}
+                href={href}
+                className="relative group px-4 py-2 font-mono text-sm text-white hover:text-neon-green cursor-pointer transition-colors duration-500"
+              >
+                <span className="invisible block">{label}</span>
+                <span className="absolute inset-0 flex items-center transition-transform duration-500 ease-in-out group-hover:translate-x-5">
+                  <span>
+                    <GlitchText text={label} />
+                  </span>
+                </span>
+                <span className="absolute inset-0 border border-neon-green scale-x-0 group-hover:scale-x-100 origin-center opacity-0 group-hover:opacity-100 transition-transform duration-300 ease-out pointer-events-none group-hover:shadow-[0_0_10px_#00FFB3]" />
+              </a>
+            ))}
+          </div>
+
+          <div className="flex flex-col space-y-2 items-end">
+            {links.slice(2).map(({ label, href }, index) => (
+              <a
+                key={index}
+                href={href}
+                className="relative group px-4 py-2 font-mono text-sm text-white hover:text-neon-green cursor-pointer transition-colors duration-500"
+              >
+                <span className="invisible block">{label}</span>
+                <span className="absolute inset-0 flex items-center transition-transform duration-500 ease-in-out group-hover:translate-x-5">
+                  <span>
+                    <GlitchText text={label} />
+                  </span>
+                </span>
+                <span className="absolute inset-0 border border-neon-green scale-x-0 group-hover:scale-x-100 origin-center opacity-0 group-hover:opacity-100 transition-transform duration-300 ease-out pointer-events-none group-hover:shadow-[0_0_10px_#00FFB3]" />
+              </a>
+            ))}
+          </div>
+        </div>
+
+        {/* Mobile menu button */}
+        <button
+          className="md:hidden border border-neon-green p-2 rounded text-neon-green"
+          onClick={() => setMenuOpen((o) => !o)}
+        >
+          {menuOpen ? (
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          ) : (
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          )}
+        </button>
+      </nav>
+
+      {/* Mobile Links */}
+      {menuOpen && (
+        <div className="md:hidden absolute z-20 w-full bg-black/90 border-t border-neon-green py-4 flex flex-col items-center space-y-4">
+          {links.map(({ label, href }, index) => (
             <a
               key={index}
               href={href}
+              onClick={() => setMenuOpen(false)}
               className="relative group px-4 py-2 font-mono text-sm text-white hover:text-neon-green cursor-pointer transition-colors duration-500"
             >
               <span className="invisible block">{label}</span>
@@ -53,7 +98,7 @@ const HeroSection: React.FC = () => {
             </a>
           ))}
         </div>
-      </nav>
+      )}
 
       <div className="relative z-20 flex flex-col md:flex-row items-center justify-between px-4 md:px-24">
         <section className="my-10 md:my-20 text-center md:text-left max-w-xl">
