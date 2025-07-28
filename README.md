@@ -1,54 +1,78 @@
-# React + TypeScript + Vite
+# Cyber Portfolio – Mehdi Belkhelfa
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, interactive portfolio to showcase my work as a Fullstack Developer with a strong focus on frontend technologies. Built with React, TypeScript, Tailwind CSS, and Framer Motion, this site highlights my projects, skills, and experience in web development.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Live Demo
+[View Portfolio](https://your-live-demo-link.com) <!-- Replace with your deployed link -->
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## ✨ Features
+- Animated hero section with glitch and typewriter effects
+- Projects carousel with real-world, fullstack projects
+- Skills section with animated progress bars
+- Downloadable CV
+- Responsive, modern design with custom HUD/grid backgrounds
+- Smooth transitions and interactive UI (Framer Motion)
+- Contact section for easy reach
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+---
+
+## 🛠️ Tech Stack
+- **Frontend:** React, TypeScript, Tailwind CSS, Framer Motion
+- **Backend (in projects):** Node.js, Spring Boot, Laravel, Odoo, PostgreSQL, MongoDB
+- **Other:** Git, Docker, Firebase, GitLab CI/CD
+
+---
+
+## 📁 Project Structure
+```
+cyber-portfolio/
+  ├── public/           # Static assets
+  ├── src/
+  │   ├── assets/      # Images, CV, project screenshots
+  │   ├── components/  # React components (Hero, Projects, Skills, etc.)
+  │   ├── App.tsx      # Main app entry
+  │   └── ...
+  ├── index.html
+  ├── package.json
+  └── ...
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🧑‍💻 Getting Started
+1. **Clone the repo:**
+   ```bash
+   git clone https://github.com/yourusername/cyber-portfolio.git
+   cd cyber-portfolio
+   ```
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+3. **Run the development server:**
+   ```bash
+   npm run dev
+   ```
+4. **Open in browser:**
+   Visit [http://localhost:5173](http://localhost:5173)
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+---
+
+## 📸 Screenshots
+<!-- Add screenshots of your portfolio UI here -->
+
+---
+
+## 📬 Contact
+- **Name:** Mehdi Belkhelfa
+- **Email:** your.email@example.com <!-- Replace with your email -->
+- **LinkedIn:** [Your LinkedIn](https://www.linkedin.com/in/your-linkedin/) <!-- Replace with your LinkedIn -->
+
+---
+
+## 📝 License
+This project is open source and available under the [MIT License](LICENSE).
