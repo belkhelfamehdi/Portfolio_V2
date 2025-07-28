@@ -22,7 +22,7 @@ A modern, interactive portfolio to showcase my work as a Fullstack Developer wit
 
 ## 🛠️ Tech Stack
 - **Frontend:** React, TypeScript, Tailwind CSS, Framer Motion
-- **Backend (in projects):** Node.js, Spring Boot, Laravel, Odoo, PostgreSQL, MongoDB
+- **Backend (in projects):** Node.js, Spring Boot, PostgreSQL, MongoDB
 - **Other:** Git, Docker, Firebase, GitLab CI/CD
 
 ---
@@ -45,6 +45,7 @@ cyber-portfolio/
 
 ## 📸 Screenshots
 <!-- Add screenshots of your portfolio UI here -->
+
 
 ---
 
