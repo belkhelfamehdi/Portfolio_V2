@@ -5,7 +5,6 @@ import ProjectsSection from './components/ProjectsSection';
 import SkillsSection from './components/SkillsSection';
 import ContactSection from './components/ContactSection';
 import Intro from './components/Intro';
-import { Analytics } from "@vercel/analytics/next"
 
 const App: React.FC = () => {
   const [introFinished, setIntroFinished] = useState(false);
@@ -30,7 +29,6 @@ const App: React.FC = () => {
           <ContactSection />
         </>
       )}
-      <Analytics />
     </div>
   );
 };
