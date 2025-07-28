@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Project1Img from "../assets/projects/mps.png";
-import Project2Img from "../assets/projects/mockup.png";
-import Project3Img from "../assets/projects/hardspace.png";
-import Project4Img from "../assets/projects/anchatty.png";
-import Project5Img from "../assets/projects/yalla_interview.png";
+import Project1Img from "../assets/projects/mps.webp";
+import Project2Img from "../assets/projects/mockup.webp";
+import Project3Img from "../assets/projects/hardspace.webp";
+import Project4Img from "../assets/projects/anchatty.webp";
+import Project5Img from "../assets/projects/yalla_interview.webp";
 import GlitchText from "./GlitchText";
 
 const projects = [
@@ -80,8 +80,9 @@ const ProjectsSection: React.FC = () => {
               className="w-full h-full"
             >
               <img
+                loading="lazy"
                 src={projects[current].image}
-                alt="project"
+                alt={projects[current].title}
                 className="w-full h-full object-fill rounded-lg"
               />
             </motion.div>
