@@ -10,7 +10,6 @@ const skillPercents: Record<string, number> = {
     "Next.js": 40,
     TailwindCSS: 90,
     Springboot: 80,
-    Laravel: 60,
     Express: 80,
     PostgreSQL: 78,
     Git: 90,
