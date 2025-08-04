@@ -8,6 +8,15 @@ import Project5Img from "../assets/projects/yalla_interview.webp";
 import GlitchText from "./GlitchText";
 
 const projects = [
+      {
+    title: "MySkilledCV – Resume Screening Platform",
+    description:
+      "An intelligent recruitment platform that analyzes uploaded resumes and ranks candidates using AI. Offers a modern dashboard with drag-and-drop functionality, real-time updates, and efficient applicant management.",
+    stack: "Spring Boot, Angular, TailwindCSS, PostgreSQL",
+    image: Project2Img,
+    role: "FullStack Developer",
+    link: "https://github.com/belkhelfamehdi/MySkilledCV_Frontend",
+  },
     {
     title: "AnChatty – Realtime Messaging Platform",
     description:
@@ -25,15 +34,6 @@ const projects = [
     image: Project5Img,
     role: "FullStack Developer",
     link: "https://yalla-interview-frontend-git-master-belkhelfamehdis-projects.vercel.app/",
-  },
-    {
-    title: "MySkilledCV – Resume Screening Platform",
-    description:
-      "An intelligent recruitment platform that analyzes uploaded resumes and ranks candidates using AI. Offers a modern dashboard with drag-and-drop functionality, real-time updates, and efficient applicant management.",
-    stack: "Spring Boot, Angular, TailwindCSS, PostgreSQL",
-    image: Project2Img,
-    role: "FullStack Developer",
-    link: "https://github.com/belkhelfamehdi/MySkilledCV_Frontend",
   },
   {
     title: "ERP Module - Production Planning",
