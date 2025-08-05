@@ -5,7 +5,7 @@ A modern, interactive portfolio to showcase my work as a Fullstack Developer wit
 ---
 
 ## 🚀 Live Demo
-[View Portfolio](https://your-live-demo-link.com) <!-- Replace with your deployed link -->
+[View Portfolio](https://mehdibelkhelfa.com) <!-- Replace with your deployed link -->
 
 ---
 
@@ -17,35 +17,6 @@ A modern, interactive portfolio to showcase my work as a Fullstack Developer wit
 - Responsive, modern design with custom HUD/grid backgrounds
 - Smooth transitions and interactive UI (Framer Motion)
 - Contact section for easy reach
-
----
-
-## 🛠️ Tech Stack
-- **Frontend:** React, TypeScript, Tailwind CSS, Framer Motion
-- **Backend (in projects):** Node.js, Spring Boot, PostgreSQL, MongoDB
-- **Other:** Git, Docker, Firebase, GitLab CI/CD
-
----
-
-## 📁 Project Structure
-```
-cyber-portfolio/
-  ├── public/           # Static assets
-  ├── src/
-  │   ├── assets/      # Images, CV, project screenshots
-  │   ├── components/  # React components (Hero, Projects, Skills, etc.)
-  │   ├── App.tsx      # Main app entry
-  │   └── ...
-  ├── index.html
-  ├── package.json
-  └── ...
-```
-
----
-
-## 📸 Screenshots
-<!-- Add screenshots of your portfolio UI here -->
-
 
 ---
 
