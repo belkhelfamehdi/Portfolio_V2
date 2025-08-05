@@ -3,18 +3,16 @@ import { Typewriter } from "react-simple-typewriter";
 import Logo from "../assets/MehdiBel_nobg.png";
 import GlitchText from "./GlitchText";
 import CV from "../assets/CV.pdf";
+import { leftNavigation, rightNavigation, typewriterWords, circleClasses } from "../constants/navigation";
 
 const HeroSection: React.FC = () => {
   return (
     <div className="min-h-screen text-white overflow-hidden relative">
       <nav className="relative z-20 flex flex-wrap md:flex-nowrap justify-between items-center px-4 md:px-8 py-6 text-sm tracking-widest gap-4">
         <div className="flex flex-col space-y-2 items-center md:items-start w-full md:w-auto">
-          {[
-            { label: "//01. <Portfolio/>", href: "#portfolio" },
-            { label: "//02. <Projects/>", href: "#projects" },
-          ].map(({ label, href }, index) => (
+          {leftNavigation.map(({ label, href }) => (
             <a
-              key={index}
+              key={label}
               href={href}
               className="relative group px-4 py-2 font-mono text-sm text-white hover:text-neon-green cursor-pointer transition-colors duration-500"
             >
@@ -34,12 +32,9 @@ const HeroSection: React.FC = () => {
         </div>
 
         <div className="flex flex-col space-y-2 items-center md:items-end w-full md:w-auto">
-          {[
-            { label: "//03. <Skills/>", href: "#skills" },
-            { label: "//04. <Contact/>", href: "#contact" },
-          ].map(({ label, href }, index) => (
+          {rightNavigation.map(({ label, href }) => (
             <a
-              key={index}
+              key={label}
               href={href}
               className="relative group px-4 py-2 font-mono text-sm text-white hover:text-neon-green cursor-pointer transition-colors duration-500"
             >
@@ -87,12 +82,7 @@ const HeroSection: React.FC = () => {
             <span>&lt;p&gt;</span>
             <span className="text-neon-green">
               <Typewriter
-                words={[
-                  "FullStack Developer",
-                  "Creator of Interfaces",
-                  "Always Learning",
-                  "Curious Mind",
-                ]}
+                words={typewriterWords}
                 loop={true}
                 cursor
                 cursorStyle="_"
@@ -113,9 +103,9 @@ const HeroSection: React.FC = () => {
             download
             className="relative w-full h-full flex items-center justify-center group"
           >
-            {["w-full", "w-[90%]", "w-[80%]", "w-[70%]"].map((size, i) => (
+            {circleClasses.map((size, i) => (
               <motion.div
-                key={i}
+                key={`circle-${size}`}
                 className={`absolute rounded-full border-2 border-white ${size} aspect-square
                   ${i === 0 ? "border-b-transparent border-l-transparent" : ""}
                   ${i === 1 ? "border-b-transparent border-r-transparent" : ""}

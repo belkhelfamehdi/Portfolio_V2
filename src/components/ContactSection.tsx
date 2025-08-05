@@ -1,20 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-
-const contacts = [
-  {
-    name: "LinkedIn",
-    link: "https://www.linkedin.com/in/mehdibelkhelfa/",
-  },
-  {
-    name: "Github",
-    link: "https://github.com/belkhelfamehdi",
-  },
-  {
-    name: "Gmail",
-    link: "mailto:mehdibelkhelfa6@gmail.com",
-  },
-];
+import { contacts } from "../constants/content";
 
 const ContactSection: React.FC = () => {
   return (

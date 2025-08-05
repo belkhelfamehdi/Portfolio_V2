@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 
 interface GlitchTextProps {
   text: string;
@@ -13,13 +13,14 @@ const GlitchText: React.FC<GlitchTextProps> = ({
 }) => {
   const [display, setDisplay] = useState("");
   const [glitching, setGlitching] = useState(true);
+  const intervalRef = useRef<number | undefined>(undefined);
   const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*<>/";
 
   useEffect(() => {
     let frame = 0;
     const maxFrames = text.length * 4;
 
-    const interval = setInterval(() => {
+    intervalRef.current = setInterval(() => {
       setDisplay(
         text.split("").map((c, i) => {
           if (c === "\n" || c === " ") return c;
@@ -29,11 +30,20 @@ const GlitchText: React.FC<GlitchTextProps> = ({
       );
       frame++;
       if (frame > maxFrames) {
-        clearInterval(interval);
-        setGlitching(false); // 🔥 Stop glitch animation
+        if (intervalRef.current) {
+          clearInterval(intervalRef.current);
+        }
+        setGlitching(false);
+        setDisplay(text); // Ensure final text is set
       }
     }, 15 + delay);
-  }, [text, delay]);
+
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
+    };
+  }, [text, delay, chars]);
 
   return (
     <span
