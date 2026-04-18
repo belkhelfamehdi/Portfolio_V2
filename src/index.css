@@ -1,128 +1,103 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=VT323&family=Press+Start+2P&family=Space+Mono&family=Share+Tech+Mono&family=IBM+Plex+Mono&family=Roboto+Mono&family=Fira+Code&family=Courier+Prime&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
 @import "tailwindcss";
 
-@font-face {
-  font-family: 'Azertype';
-  src: url('/fonts/azertyperegular.ttf') format('truetype');
-  font-display: swap;
-}
-
 @theme {
-  --font-mono: "Share Tech Mono", monospace;
-  --font-orbitron: "Orbitron", sans-serif;
-  --font-vt323: "VT323", monospace;
-  --font-press: "Press Start 2P", monospace;
-  --font-space: "Space Mono", monospace;
-  --font-share: "Share Tech Mono", monospace;
-  --font-ibm: "IBM Plex Mono", monospace;
-  --font-roboto: "Roboto Mono", monospace;
-  --font-fira: "Fira Code", monospace;
-  --font-courier: "Courier Prime", monospace;
-  --font-monaco: "Monaco", monospace;
-  --font-azertype: "Azertype", monospace;
+  --color-surface-variant: #353535;
+  --color-surface-tint: #00e38d;
+  --color-on-primary-container: #007144;
+  --color-surface-container: #1f1f1f;
+  --color-inverse-on-surface: #303030;
+  --color-secondary: #a6e6ff;
+  --color-on-secondary-container: #00566b;
+  --color-tertiary: #fffaff;
+  --color-tertiary-container: #e7d9ff;
+  --color-on-primary-fixed-variant: #005230;
+  --color-on-error-container: #ffdad6;
+  --color-on-tertiary: #3c0090;
+  --color-secondary-fixed: #b7eaff;
+  --color-primary-fixed: #55ffa9;
+  --color-on-background: #e2e2e2;
+  --color-on-secondary-fixed-variant: #004e60;
+  --color-surface: #131313;
+  --color-on-primary: #00391f;
+  --color-surface-container-highest: #353535;
+  --color-on-error: #690005;
+  --color-on-tertiary-container: #7623ff;
+  --color-on-secondary-fixed: #001f28;
+  --color-primary-fixed-dim: #00e38d;
+  --color-primary-container: #00ff9f;
+  --color-error: #ffb4ab;
+  --color-background: #131313;
+  --color-error-container: #93000a;
+  --color-on-surface-variant: #b9cbbc;
+  --color-surface-container-high: #2a2a2a;
+  --color-outline-variant: #3a4a3f;
+  --color-on-secondary: #003543;
+  --color-surface-dim: #131313;
+  --color-primary: #f4fff4;
+  --color-outline: #849587;
+  --color-surface-container-low: #1b1b1b;
+  --color-surface-bright: #393939;
+  --color-surface-container-lowest: #0e0e0e;
+  --color-inverse-primary: #006d41;
+  --color-tertiary-fixed: #e9ddff;
+  --color-on-tertiary-fixed: #23005b;
+  --color-on-primary-fixed: #002110;
+  --color-secondary-fixed-dim: #4cd6ff;
+  --color-on-tertiary-fixed-variant: #5700c9;
+  --color-on-surface: #e2e2e2;
+  --color-tertiary-fixed-dim: #d1bcff;
+  --color-secondary-container: #14d1ff;
+  --color-inverse-surface: #e2e2e2;
 
-  --color-neon-green: #00FFB3;
-
-}
-
-body {
-  @apply bg-black
+  --font-headline: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-label: "Space Grotesk", sans-serif;
 }
 
 html {
-  @apply scroll-smooth
+  scroll-behavior: smooth;
 }
 
-.glitch-text {
-  position: relative;
-  color: white;
-  display: inline-block;
+body {
+  background-color: #131313;
+  color: #e2e2e2;
+  cursor: crosshair;
 }
 
-.glitch-text::before,
-.glitch-text::after {
-  content: attr(data-text);
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.scanline {
+  width: 100%;
+  height: 2px;
+  background: rgba(0, 255, 159, 0.1);
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  overflow: hidden;
   pointer-events: none;
-  white-space: pre;
+  animation: scan 8s linear infinite;
 }
 
-.glitch-text::before {
-  left: 2px;
-  text-shadow: -2px 0 magenta;
-  color: #ff00c8;
-  animation: glitch-anim 1s infinite linear alternate-reverse;
-  z-index: -1;
-}
-
-.glitch-text::after {
-  left: -2px;
-  text-shadow: 2px 0 cyan;
-  color: #00fff9;
-  animation: glitch-anim 1s infinite linear alternate;
-  z-index: -2;
-}
-
-@keyframes glitch-anim {
+@keyframes scan {
   0% {
-    clip-path: inset(0 0 100% 0);
-  }
-  10% {
-    clip-path: inset(10% 0 85% 0);
-  }
-  20% {
-    clip-path: inset(80% 0 10% 0);
-  }
-  30% {
-    clip-path: inset(25% 0 60% 0);
-  }
-  40% {
-    clip-path: inset(60% 0 30% 0);
-  }
-  50% {
-    clip-path: inset(40% 0 45% 0);
-  }
-  60% {
-    clip-path: inset(75% 0 20% 0);
-  }
-  70% {
-    clip-path: inset(50% 0 40% 0);
-  }
-  80% {
-    clip-path: inset(20% 0 70% 0);
-  }
-  90% {
-    clip-path: inset(15% 0 75% 0);
+    top: 0;
   }
   100% {
-    clip-path: inset(0 0 100% 0);
+    top: 100%;
   }
 }
 
-@keyframes blink {
-  0%, 100% { opacity: 1 }
-  50% { opacity: 0 }
+.grid-bg {
+  background-image:
+    linear-gradient(to right, rgba(58, 74, 63, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(58, 74, 63, 0.1) 1px, transparent 1px);
+  background-size: 40px 40px;
 }
 
-.animate-blink {
-  animation: blink 1s step-end infinite;
-}
-
-@keyframes flicker {
-  0%, 100% { opacity: 1; }
-  45% { opacity: 0.4; }
-  48% { opacity: 0.8; }
-  50% { opacity: 0.3; }
-  55% { opacity: 0.9; }
-  60% { opacity: 0.5; }
-  70% { opacity: 1; }
-}
-
-.animate-flicker {
-  animation: flicker 2s infinite;
+.crt-glow {
+  text-shadow: 0 0 10px rgba(0, 255, 159, 0.5);
 }
 
