@@ -1,6 +1,14 @@
-import { skillCategories, toolCategory } from '@/data/portfolioData';
+import type { SkillCategory, ToolCategory } from '@/data/portfolioData';
 
-const SkillsSection: React.FC = () => {
+interface SkillsSectionProps {
+  skillCategories: SkillCategory[];
+  toolCategory: ToolCategory;
+}
+
+const SkillsSection: React.FC<SkillsSectionProps> = ({
+  skillCategories,
+  toolCategory,
+}) => {
   return (
     <section className="py-24 px-8 md:px-24 bg-surface-container-lowest" id="skills">
       <div className="max-w-6xl mx-auto">
