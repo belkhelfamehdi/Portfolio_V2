@@ -7,6 +7,8 @@ export interface ProfessionalProject {
   tags: string[];
   linkLabel: string;
   link: string;
+  demoLabel?: string;
+  demoLink?: string;
 }
 
 export interface HeaderNavItem {
@@ -153,30 +155,19 @@ export const defaultPortfolioData: PortfolioData = {
   },
   professionalProjects: [
     {
-      title: 'MySkilledCV',
+      title: 'Yalla Interview Platform',
       description:
-        'A sophisticated platform for professionals to architect their careers through data-driven CV generation and portfolio hosting.',
+        'AI-powered platform that helps candidates train for technical interviews end-to-end: users create targeted practice sessions, get tailored questions and model answers, pin key questions, add notes, request deeper explanations, and continuously improve through organized revision cycles.',
       image:
         'https://lh3.googleusercontent.com/aida-public/AB6AXuDXGDiWlM-Jl2mVI-L83RacHLgt4bAT_kLwtXJhjDVrkpfU2hIowp_oDkMh96imm9IUXPJ2jEV1QTbLObHO17hca3eOw3frtKQg8TJq3ix9DwVXI3GvFpf_Zkczurk8pl8PCxuRYHjG66tP2czulXGryrn4ldcsiZDPEqEU4Tmdr3O9JoXkKkWD3z1Zj_Ah-gdUz1ccm1LV_1V0nlAovkJw6dMRkrWULyDfDzGXvPBUOGJ1KktDaCb9Mv1f0ow307iPVVXvyiRwhsaG',
       imageAlt:
-        'High-tech dashboard user interface for a resume builder application, dark mode, vibrant cyan and green accents, clean typography',
-      stackBadges: ['JAVA', 'ANGULAR'],
-      tags: ['#SPRING_BOOT', '#POSTGRESQL', '#AWS', '#TAILWIND'],
-      linkLabel: 'ACCESS_REPOSITORY',
-      link: '#',
-    },
-    {
-      title: 'OpsFlow Control Center',
-      description:
-        'Professional operations dashboard for monitoring service incidents, team response workflows, and deployment health in real time.',
-      image:
-        'https://lh3.googleusercontent.com/aida-public/AB6AXuC_X8V_k8knC3UtuUJ2_y2GWJxwVursDVMe6K4x_ceSER9b2i0MHUKbW2cq7F4IS8Ma-TUmwGqPk1PBIlHgrYTtR6Vwc7HJTGWwkhTFl1TapQN1RwaW5csMEmjGJYgey2yuedN6SYRbh8hlzLI-UmTlb0bF47L2CaCZEVFLeWlqmv-yXfDqcYGu7TkhidBCfztOl2CJTeJiT18TOSG7OwU5bmlqkXdohqL0u0R97oaNTO3Xownih0h2Ym9c6-NgDX-Ub8SIw4iJXkEV',
-      imageAlt:
-        'Operational command dashboard with incident metrics and deployment timelines',
-      stackBadges: ['SPRING_BOOT', 'REACT'],
-      tags: ['#MICROSERVICES', '#DOCKER', '#CI_CD', '#OBSERVABILITY'],
-      linkLabel: 'VIEW_CASE_STUDY',
-      link: '#',
+        'AI interview training workspace showing personalized sessions, questions, and guided revision',
+      stackBadges: ['REACT', 'TYPESCRIPT', 'VITE', 'NODE_JS', 'EXPRESS', 'MONGODB', 'JWT', 'GROQ_AI'],
+      tags: ['#INTERVIEW_TRAINING', '#PERSONALIZED_PRACTICE', '#SESSION_WORKFLOW', '#LEARNING_FEEDBACK'],
+      linkLabel: 'OPEN_PROJECT_REPOSITORIES',
+      link: 'https://github.com/belkhelfamehdi/yalla_interview_Frontend.git',
+      demoLabel: 'LIVE_DEMO',
+      demoLink: 'https://yalla-interview.mehdibelkhelfa.com/',
     },
   ],
   sideProjects: [
@@ -320,6 +311,9 @@ const isProfessionalProject = (value: unknown): value is ProfessionalProject => 
     return false;
   }
 
+  const demoLabelIsValid = value.demoLabel === undefined || typeof value.demoLabel === 'string';
+  const demoLinkIsValid = value.demoLink === undefined || typeof value.demoLink === 'string';
+
   return (
     typeof value.title === 'string' &&
     typeof value.description === 'string' &&
@@ -328,7 +322,9 @@ const isProfessionalProject = (value: unknown): value is ProfessionalProject => 
     isStringArray(value.stackBadges) &&
     isStringArray(value.tags) &&
     typeof value.linkLabel === 'string' &&
-    typeof value.link === 'string'
+    typeof value.link === 'string' &&
+    demoLabelIsValid &&
+    demoLinkIsValid
   );
 };
 

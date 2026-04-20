@@ -61,9 +61,28 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                   ))}
                 </div>
 
-                <a className="inline-flex items-center gap-2 text-primary-container font-headline font-bold text-sm group-hover:gap-4 transition-all" href={project.link}>
-                  {project.linkLabel} <span className="material-symbols-outlined text-sm">arrow_forward</span>
-                </a>
+                <div className="flex flex-wrap items-center gap-3">
+                  <a
+                    className="inline-flex items-center gap-2 text-primary-container font-headline font-bold text-sm group-hover:gap-4 transition-all"
+                    href={project.link}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {project.linkLabel} <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                  </a>
+
+                  {project.demoLink && project.demoLabel ? (
+                    <a
+                      className="inline-flex items-center gap-2 border border-primary-container/60 px-3 py-1 text-primary-container font-headline font-bold text-sm hover:border-primary-container"
+                      href={project.demoLink}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {project.demoLabel}
+                      <span className="material-symbols-outlined text-sm">open_in_new</span>
+                    </a>
+                  ) : null}
+                </div>
               </div>
             </article>
           ))}
