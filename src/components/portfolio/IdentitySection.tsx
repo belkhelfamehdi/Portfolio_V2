@@ -35,7 +35,7 @@ const IdentitySection: React.FC<IdentitySectionProps> = ({ identity }) => {
             <p className="mb-6"><span className="text-primary-fixed-dim font-headline mr-2">[INFO]</span> {identity.bioInfo}</p>
             <p className="mb-6"><span className="text-primary-fixed-dim font-headline mr-2">[MISN]</span> {identity.bioMission}</p>
 
-            <div className="grid grid-cols-2 gap-4 mt-8 pt-8 border-t border-outline-variant/20">
+            <div className="grid grid-cols-2 gap-4 pt-8 border-t border-outline-variant/20">
               {identity.details.map((detail) => (
                 <div key={detail.label}>
                   <p className="font-headline text-[10px] text-outline uppercase tracking-tighter">{detail.label}</p>
@@ -43,6 +43,23 @@ const IdentitySection: React.FC<IdentitySectionProps> = ({ identity }) => {
                 </div>
               ))}
             </div>
+
+            {identity.education && identity.education.length > 0 && (
+              <div className="mt-8 pt-8 border-t border-outline-variant/20">
+                <p className="font-headline text-[10px] text-outline uppercase tracking-tighter mb-4">EDUCATION</p>
+                <div className="space-y-4">
+                  {identity.education.map((edu, index) => (
+                    <div key={index} className="bg-surface-container-lowest p-4 border border-outline-variant/20">
+                      <p className="text-primary font-headline">{edu.degree}</p>
+                      <p className="text-on-surface-variant text-sm">{edu.institution}</p>
+                      <p className="text-outline text-xs">{edu.location}</p>
+                      <p className="text-primary-container text-xs mt-1">{edu.period}</p>
+                      {edu.description && <p className="text-on-surface-variant text-sm mt-2">{edu.description}</p>}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>

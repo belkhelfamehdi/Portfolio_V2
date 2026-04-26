@@ -44,6 +44,15 @@ export interface IdentityContent {
   bioInfo: string;
   bioMission: string;
   details: IdentityDetail[];
+  education: Education[];
+}
+
+export interface Education {
+  degree: string;
+  institution: string;
+  location: string;
+  period: string;
+  description?: string;
 }
 
 export interface SideProject {
@@ -151,6 +160,22 @@ export const defaultPortfolioData: PortfolioData = {
       { label: 'Experience', value: '3+ YEARS_ACTIVE' },
       { label: 'Current_Focus', value: 'CLOUD_ARCHITECTURE' },
       { label: 'Availability', value: 'OPEN_FOR_DIRECTIVE' },
+    ],
+    education: [
+      {
+        degree: 'Master of Computer Science',
+        institution: 'ESI - Ecole Nationale Supérieure d\'Informatique',
+        location: 'Algiers, Algeria',
+        period: '2022 - 2024',
+        description: 'Specialized in software engineering and distributed systems',
+      },
+      {
+        degree: 'Bachelor of Computer Science',
+        institution: 'University of Science and Technology Houari Boumediene (USTHB)',
+        location: 'Algiers, Algeria',
+        period: '2019 - 2022',
+        description: 'Foundation in computer science and algorithms',
+      },
     ],
   },
   professionalProjects: [
