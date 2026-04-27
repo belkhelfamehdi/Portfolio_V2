@@ -25,8 +25,8 @@ const FILE_SYSTEM: FileSystem = {
 
 const CV_CONTENT = `
 ╔══════════════════════════════════════════════════════════════════╗
-║                    MEHDI BELKHELFA                         ║
-║                    FullStack Developer                     ║
+║                    MEHDI BELKHELFA                                      ║
+║                    FullStack Developer                                  ║
 ╚══════════════════════════════════════════════════════════════════╝
 
 📚 EDUCATION
