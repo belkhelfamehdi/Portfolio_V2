@@ -64,7 +64,7 @@ const SkillsSection: React.FC = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
       id="skills"
-      className="min-h-screen w-full text-neon-green font-mono px-4 py-16 flex flex-col items-center justify-center relative"
+      className="min-h-[70vh] w-full text-neon-green font-mono px-4 py-16 flex flex-col items-center justify-center relative"
     >
       {/* Background HUD Grid */}
       <div className="absolute inset-0 z-0 bg-[radial-gradient(#00FFB3_1px,transparent_1px)] [background-size:20px_20px] opacity-5" />

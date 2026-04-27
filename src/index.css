@@ -126,3 +126,24 @@ html {
   animation: flicker 2s infinite;
 }
 
+.terminal-input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #000 inset;
+  -webkit-text-fill-color: #00FFB3;
+  caret-color: #00FFB3;
+}
+
+.terminal-input {
+  caret-color: #00FFB3;
+}
+
+#terminal-input-field {
+  -webkit-text-fill-color: #00FFB3 !important;
+  -webkit-box-shadow: 0 0 0 1000px #000 inset !important;
+  -moz-text-fill-color: #00FFB3 !important;
+}
+
+#terminal-input-field:focus {
+  outline: none;
+  -webkit-box-shadow: none;
+}
+

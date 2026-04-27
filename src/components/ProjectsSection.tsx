@@ -16,7 +16,7 @@ const ProjectsSection: React.FC = () => {
   return (
     <section
       id="projects"
-      className="min-h-screen text-neon-green font-mono flex flex-col items-center justify-center px-4 py-16 relative"
+      className="min-h-[70vh] text-neon-green font-mono flex flex-col items-center justify-center px-4 py-16 relative"
     >
       {/* Content */}
       <div className="flex flex-col md:flex-row items-center justify-between w-full max-w-7xl gap-8">

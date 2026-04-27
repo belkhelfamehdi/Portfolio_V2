@@ -6,7 +6,7 @@ const ContactSection: React.FC = () => {
   return (
     <section
       id="contact"
-      className="relative min-h-screen w-full text-neon-green font-mono flex flex-col items-center justify-center px-4 py-24 overflow-hidden"
+      className="relative min-h-[60vh] w-full text-neon-green font-mono flex flex-col items-center justify-center px-4 py-24 overflow-hidden"
     >
       <h2 className="text-3xl sm:text-4xl font-orbitron mb-16 text-white z-10 relative text-center">
         &lt;Connect with me/&gt;
