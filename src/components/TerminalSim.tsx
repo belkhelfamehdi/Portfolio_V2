@@ -75,8 +75,6 @@ ____    ____  _________  ____  ____  ______   _____
 const TerminalSim: React.FC = () => {
   const [input, setInput] = useState("");
   const [history, setHistory] = useState<CommandResult[]>([]);
-  const [commandHistory, setCommandHistory] = useState<string[]>([]);
-  const [historyIndex, setHistoryIndex] = useState(-1);
   const [currentPath, setCurrentPath] = useState("/home/me");
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -183,9 +181,6 @@ const TerminalSim: React.FC = () => {
     e.stopPropagation();
     if (!input.trim()) return;
 
-    setCommandHistory(prev => [...prev, input]);
-    setHistoryIndex(-1);
-
     const output = executeCommand(input);
     setHistory(prev => [...prev, { command: input, output: input, type: "input" }]);
 
@@ -195,28 +190,6 @@ const TerminalSim: React.FC = () => {
     }
 
     setInput("");
-  };
-
-  const handleKeyDown = (e: React.KeyboardEvent) => {
-    e.stopPropagation();
-    if (e.key === "ArrowUp") {
-      e.preventDefault();
-      if (commandHistory.length > 0) {
-        const newIndex = historyIndex < commandHistory.length - 1 ? historyIndex + 1 : historyIndex;
-        setHistoryIndex(newIndex);
-        setInput(commandHistory[commandHistory.length - 1 - newIndex] || "");
-      }
-    } else if (e.key === "ArrowDown") {
-      e.preventDefault();
-      if (historyIndex > 0) {
-        const newIndex = historyIndex - 1;
-        setHistoryIndex(newIndex);
-        setInput(commandHistory[commandHistory.length - 1 - newIndex] || "");
-      } else if (historyIndex === 0) {
-        setHistoryIndex(-1);
-        setInput("");
-      }
-    }
   };
 
   return (
