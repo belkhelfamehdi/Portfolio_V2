@@ -1,61 +1,37 @@
 import { motion } from "framer-motion";
+import { 
+  SiJavascript, SiTypescript, SiPhp, SiReact, SiAngular, SiNextdotjs, 
+  SiTailwindcss, SiNodedotjs, SiSpringboot, SiLaravel, SiPostgresql, 
+  SiExpress, SiGit, SiGitlab, SiDocker, SiFirebase 
+} from "react-icons/si";
+import { FaJava } from "react-icons/fa";
 
-const skillPercents: Record<string, number> = {
-    JavaScript: 90,
-    TypeScript: 85,
-    Java: 75,
-    PHP: 70,
-    React: 80,
-    Angular: 50,
-    "Next.js": 40,
-    TailwindCSS: 90,
-    Springboot: 80,
-    Express: 80,
-    PostgreSQL: 78,
-    Git: 90,
-    "GitLab CI/CD": 65,
-    Docker: 86,
-    Firebase: 70,
-  };
-  
-  const skills = {
-    Languages: ["JavaScript", "TypeScript", "Java", "PHP"],
-    Frontend: ["React", "Angular", "Next.js","TailwindCSS",],
-    Backend: ["Node.js", "Springboot", "Laravel","PostgreSQL"],
-    Tools: ["Git", "GitLab CI/CD", "Docker", "Firebase"]
-  };
+const skillIcons: Record<string, React.ReactElement> = {
+  JavaScript: <SiJavascript />,
+  TypeScript: <SiTypescript />,
+  Java: <FaJava />,
+  PHP: <SiPhp />,
+  React: <SiReact />,
+  Angular: <SiAngular />,
+  "Next.js": <SiNextdotjs />,
+  TailwindCSS: <SiTailwindcss />,
+  "Node.js": <SiNodedotjs />,
+  "Spring Boot": <SiSpringboot />,
+  Laravel: <SiLaravel />,
+  PostgreSQL: <SiPostgresql />,
+  Express: <SiExpress />,
+  Git: <SiGit />,
+  "GitLab CI/CD": <SiGitlab />,
+  Docker: <SiDocker />,
+  Firebase: <SiFirebase />,
+};
 
-  const SkillBar = ({ label }: { label: string }) => {
-    const target = skillPercents[label] || 70;
-  
-    return (
-      <motion.div
-        className="w-full mb-4 group"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={{
-          hidden: { opacity: 0, y: 10 },
-          visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
-        }}
-      >
-        <div className="flex justify-between text-xs text-neon-green font-mono tracking-widest mb-1">
-          <span>{`> ${label}`}</span>
-          <span>{`${target}%`}</span>
-        </div>
-        <div className="w-full h-3 rounded-sm overflow-hidden border border-neon-green shadow-inner">
-          <motion.div
-            className="h-full bg-neon-green shadow-[0_0_10px_#00FFB3] group-hover:shadow-[0_0_20px_#00FFB3]"
-            initial={{ width: "0%" }}
-            whileInView={{ width: `${target}%` }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
-            viewport={{ once: true }}
-          />
-        </div>
-      </motion.div>
-    );
-  };
-  
+const skills = {
+  Languages: ["JavaScript", "TypeScript", "Java", "PHP"],
+  Frontend: ["React", "Angular", "Next.js", "TailwindCSS"],
+  Backend: ["Node.js", "Spring Boot", "Laravel", "PostgreSQL", "Express"],
+  Tools: ["Git", "GitLab CI/CD", "Docker", "Firebase"],
+};
 
 const SkillsSection: React.FC = () => {
   return (
@@ -93,9 +69,19 @@ const SkillsSection: React.FC = () => {
               <div className="absolute -top-3 left-4 px-2 text-xs bg-black text-neon-green border border-neon-green rounded">
                 {`// ${category}`}
               </div>
-              <div className="mt-4">
+              <div className="mt-6 flex flex-wrap gap-2">
                 {items.map((skill) => (
-                  <SkillBar key={skill} label={skill} />
+                  <motion.span
+                    key={skill}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.3 }}
+                    viewport={{ once: true }}
+                    className="inline-flex items-center gap-2 px-3 py-1 border border-neon-green rounded-full text-xs font-mono text-neon-green bg-black/80 hover:bg-neon-green/20 hover:shadow-[0_0_10px_#00FFB3] cursor-default transition-all duration-300"
+                  >
+                    <span className="text-sm">{skillIcons[skill]}</span>
+                    <span>{skill}</span>
+                  </motion.span>
                 ))}
               </div>
             </motion.div>

@@ -15,9 +15,12 @@ export const rightNavigation: NavigationItem[] = [
 
 export const typewriterWords = [
   "FullStack Developer",
-  "Creator of Interfaces", 
-  "Always Learning",
-  "Curious Mind",
+  "Creator of Interfaces",
+  "Always learning",
+  "Always leveling up",
+  "Always building",
+  "Always shipping",
+  "Always curious",
 ];
 
 export const circleClasses = ["w-full", "w-[90%]", "w-[80%]", "w-[70%]"];
