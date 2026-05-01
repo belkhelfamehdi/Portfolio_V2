@@ -3,6 +3,10 @@ import Project2Img from "../assets/projects/mockup.webp";
 import Project3Img from "../assets/projects/hardspace.webp";
 import Project4Img from "../assets/projects/anchatty.webp";
 import Project5Img from "../assets/projects/yalla_interview.webp";
+import Project6Img from "../assets/projects/clinical.png";
+import Project7Img from "../assets/projects/Billard.png";
+import Project8Img from "../assets/projects/parkmel.png";
+import Project9Img from "../assets/projects/logistic.png";
 
 export interface Project {
   id: string;
@@ -15,6 +19,26 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  {
+    id: "logistics-control-center",
+    title: "Logistics Control Center – Microservices Dashboard",
+    description:
+      "A modern React admin dashboard for managing logistics operations including orders, inventory, and shipments. Features a dark-themed premium UI inspired by Stripe/Linear, role-based access control (Admin/Ops/Delivery), real-time data visualization with Recharts, and integration with a Spring Boot microservices backend using Kafka for event-driven architecture.",
+    stack: "React 19, TypeScript, TailwindCSS, TanStack Query, React Router, Recharts, Vite",
+    image: Project9Img,
+    role: "Frontend Lead & UI/UX Designer",
+    link: "https://github.com/belkhelfamehdi/logistics-control-center",
+  },
+  {
+    id: "billard",
+    title: "Billard – Mobile Billiard Management App",
+    description:
+      "A cross-platform mobile app for discovering billiard tables, starting games via QR code scanning, and connecting with friends. Features interactive maps with clustering, real-time friend status, player statistics, and JWT-based authentication. Backed by a microservices architecture with Quarkus and PostgreSQL/MongoDB.",
+    stack: "React Native, Expo, TypeScript, UI Kitten, NativeWind, Quarkus, Java 17, PostgreSQL, MongoDB, Docker",
+    image: Project7Img,
+    role: "FullStack Developer",
+    link: "https://gitlab.com/LucasVanV/billard-app-mobile",
+  },
   {
     id: "myskilledcv",
     title: "MySkilledCV – Resume Screening Platform",
@@ -64,5 +88,25 @@ export const projects: Project[] = [
     image: Project3Img,
     role: "FullStack Developer",
     link: "https://github.com/belkhelfamehdi/E-commerce-HardSpace",
+  },
+  {
+    id: "clinical-management",
+    title: "Clinical Management System",
+    description:
+      "A modernized clinical management system for healthcare facilities. Handles patient management, employee management, pharmacy, room management, blood bank, invoicing, leave management, and consultation management. Built with Laravel and Vue 3 using Inertia.js for seamless SPA experience.",
+    stack: "Laravel 13.6, Vue 3, Inertia.js, TailwindCSS, MySQL, Docker",
+    image: Project6Img,
+    role: "FullStack Developer",
+    link: "https://github.com/belkhelfamehdi/clinical-management",
+  },
+  {
+    id: "parkmel",
+    title: "ParkMEL – Real-time Parking Finder",
+    description:
+      "A web application for finding available parking spots in the Lille metropolitan area. Features an interactive Leaflet map with clustered markers, real-time data from the Lille Métropole Open Data API (auto-refreshed every 5 minutes), sortable/searchable parking lists, geolocation support, and Google Maps navigation integration.",
+    stack: "Vue 3, TypeScript, Vite, Leaflet, TailwindCSS, Pinia, Vue Router",
+    image: Project8Img,
+    role: "FullStack Developer",
+    link: "https://github.com/belkhelfamehdi/ParkMEL",
   },
 ];
