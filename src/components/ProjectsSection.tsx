@@ -35,7 +35,7 @@ const ProjectsSection: React.FC = () => {
               className="relative group border border-neon-green rounded-lg bg-black/60 overflow-hidden shadow-[0_0_15px_#00FFB3] hover:shadow-[0_0_30px_#00FFB3] transition-all duration-300"
             >
               {/* Project Image */}
-              <div className="relative h-48 overflow-hidden border-b border-neon-green">
+              <div className="relative h-64 overflow-hidden border-b border-neon-green">
                 <img
                   loading="lazy"
                   src={project.image}
