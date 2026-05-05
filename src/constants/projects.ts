@@ -1,5 +1,4 @@
 import Project1Img from "../assets/projects/mps.webp";
-import Project2Img from "../assets/projects/mockup.webp";
 import Project3Img from "../assets/projects/hardspace.webp";
 import Project4Img from "../assets/projects/anchatty.webp";
 import Project5Img from "../assets/projects/yalla_interview.webp";
@@ -7,7 +6,8 @@ import Project6Img from "../assets/projects/clinical.png";
 import Project7Img from "../assets/projects/Billard.png";
 import Project8Img from "../assets/projects/parkmel.png";
 import Project9Img from "../assets/projects/logistic.png";
-import Project10Img from "../assets/projects/ParkMEL-Mobile.png";
+import Project10Img from "../assets/projects/Distriresto.png";
+import Project11Img from "../assets/projects/ParkMEL-Mobile.png";
 
 export interface Project {
   id: string;
@@ -20,6 +20,16 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  {
+    id: "distriresto",
+    title: "Distriresti – E-Commerce for Food Wholesaler",
+    description:
+      "A professional e-commerce platform built for Distriresti, a food wholesaler company. Features product catalog management, online ordering system, customer management, order tracking, inventory management, and a comprehensive admin dashboard for managing the entire wholesale business operations.",
+    stack: "WordPress, WooCommerce, PHP, MySQL, JavaScript",
+    image: Project10Img,
+    role: "WordPress Developer",
+    link: "#",
+  },
   {
     id: "logistics-control-center",
     title: "Logistics Control Center – Microservices Dashboard",
@@ -96,7 +106,7 @@ export const projects: Project[] = [
     description:
       "A cross-platform mobile application for finding available parking spots in the Lille metropolitan area. Features real-time parking availability from the Lille Métropole Open Data API, interactive map with clustered markers, favorites, search functionality, and navigation integration. Built with React Native, Expo, and TypeScript.",
     stack: "React Native, Expo, TypeScript, NativeWind, Axios",
-    image: Project10Img,
+    image: Project11Img,
     role: "FullStack Developer",
     link: "https://github.com/belkhelfamehdi/parkmel-mobile",
   },
