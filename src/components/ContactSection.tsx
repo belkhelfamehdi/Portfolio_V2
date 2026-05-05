@@ -1,6 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { FaLinkedinIn, FaGithub, FaGoogle } from "react-icons/fa";
 import { contacts } from "../constants/content";
+
+const iconMap: Record<string, React.ReactElement> = {
+  linkedin: <FaLinkedinIn className="w-6 h-6" />,
+  github: <FaGithub className="w-6 h-6" />,
+  gmail: <FaGoogle className="w-6 h-6" />,
+};
 
 const ContactSection: React.FC = () => {
   return (
@@ -38,7 +45,7 @@ const ContactSection: React.FC = () => {
 
         {/* Social Links */}
         <div className="grid grid-cols-3 gap-6 place-items-center w-full max-w-lg pt-4 border-t border-neon-green/30">
-          {contacts.map(({ name, link }) => (
+          {contacts.map(({ name, link, iconKey }) => (
             <motion.a
               key={name}
               href={link}
@@ -49,7 +56,7 @@ const ContactSection: React.FC = () => {
               className="flex flex-col items-center gap-2 text-white hover:text-neon-green transition-colors duration-300"
             >
               <div className="w-14 h-14 flex items-center justify-center border-2 border-neon-green rounded-full shadow-[0_0_10px_#00FFB3] hover:shadow-[0_0_20px_#00FFB3] transition-all duration-300">
-                <span className="text-xs font-bold">{name.charAt(0)}</span>
+                {iconMap[iconKey]}
               </div>
               <span className="text-xs font-mono">{name}</span>
             </motion.a>
