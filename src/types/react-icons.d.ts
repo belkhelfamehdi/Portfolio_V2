@@ -21,4 +21,7 @@ declare module 'react-icons/si' {
 declare module 'react-icons/fa' {
   import { IconType } from 'react-icons';
   export const FaJava: IconType;
+  export const FaLinkedinIn: IconType;
+  export const FaGithub: IconType;
+  export const FaGoogle: IconType;
 }
