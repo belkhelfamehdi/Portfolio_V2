@@ -4,41 +4,66 @@ import {
   SiJavascript, SiTypescript, SiPhp, SiReact, SiAngular, SiNextdotjs,
   SiTailwindcss, SiNodedotjs, SiSpringboot, SiLaravel, SiPostgresql,
   SiExpress, SiGit, SiGitlab, SiDocker, SiFirebase,
+  SiPython, SiVuedotjs, SiMongodb, SiMysql, SiWordpress, SiExpo,
+  SiHtml5, SiGithub, SiNginx, SiPostman, SiLinux,
+  SiKubernetes, SiFedora,
 } from "react-icons/si";
-import { FaJava } from "react-icons/fa";
+import { FaJava, FaWindows } from "react-icons/fa";
 
 const skillIcons: Record<string, React.ReactElement> = {
   JavaScript:     <SiJavascript />,
   TypeScript:     <SiTypescript />,
   Java:           <FaJava />,
   PHP:            <SiPhp />,
+  Python:         <SiPython />,
+  "HTML/CSS":     <SiHtml5 />,
   React:          <SiReact />,
   Angular:        <SiAngular />,
   "Next.js":      <SiNextdotjs />,
+  "Vue.js":       <SiVuedotjs />,
   TailwindCSS:    <SiTailwindcss />,
+  "React Native": <SiReact />,
+  NativeWind:     <SiTailwindcss />,
+  Expo:           <SiExpo />,
   "Node.js":      <SiNodedotjs />,
   "Spring Boot":  <SiSpringboot />,
   Laravel:        <SiLaravel />,
-  PostgreSQL:     <SiPostgresql />,
   Express:        <SiExpress />,
+  PostgreSQL:     <SiPostgresql />,
+  MySQL:          <SiMysql />,
+  MongoDB:        <SiMongodb />,
+  Firebase:       <SiFirebase />,
   Git:            <SiGit />,
+  GitHub:         <SiGithub />,
   "GitLab CI/CD": <SiGitlab />,
   Docker:         <SiDocker />,
-  Firebase:       <SiFirebase />,
+  Nginx:          <SiNginx />,
+  Postman:        <SiPostman />,
+  WordPress:      <SiWordpress />,
+  Kubernetes:     <SiKubernetes />,
+  Linux:          <SiLinux />,
+  Windows:        <FaWindows />,
+  Fedora:         <SiFedora />,
 };
 
 const skills: Record<string, string[]> = {
-  Languages: ["JavaScript", "TypeScript", "Java", "PHP"],
-  Frontend:  ["React", "Angular", "Next.js", "TailwindCSS"],
-  Backend:   ["Node.js", "Spring Boot", "Laravel", "PostgreSQL", "Express"],
-  Tools:     ["Git", "GitLab CI/CD", "Docker", "Firebase"],
+  Languages:        ["JavaScript", "TypeScript", "Java", "PHP", "Python", "SQL"],
+  Frontend:         ["React", "Angular", "Next.js", "Vue.js", "TailwindCSS", "HTML/CSS"],
+  Backend:          ["Node.js", "Spring Boot", "Laravel", "Express", "Odoo"],
+  Mobile:           ["React Native", "NativeWind", "Expo"],
+  Databases:        ["PostgreSQL", "MySQL", "MongoDB", "Firebase"],
+  "DevOps & Tools": ["Git", "GitHub", "GitLab CI/CD", "Docker", "Kubernetes", "Nginx", "Maven", "Postman", "WordPress"],
+  OS:               ["Linux", "Fedora", "Windows"],
 };
 
 const categoryIcons: Record<string, string> = {
-  Languages: "{ }",
-  Frontend:  "< >",
-  Backend:   "[ ]",
-  Tools:     "( )",
+  Languages:        "{ }",
+  Frontend:         "< >",
+  Backend:          "[ ]",
+  Mobile:           "( )",
+  Databases:        "[ : ]",
+  "DevOps & Tools": "//",
+  OS:               ">_",
 };
 
 const containerVariants = {
@@ -61,6 +86,8 @@ const pillVariants = {
 };
 
 const SkillsSection: React.FC = () => {
+  const entries = Object.entries(skills);
+
   return (
     <section
       id="skills"
@@ -89,77 +116,82 @@ const SkillsSection: React.FC = () => {
 
         {/* Skill categories */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
         >
-          {Object.entries(skills).map(([category, items], catIndex) => (
-            <motion.div
-              key={category}
-              variants={cardVariants}
-              className="relative p-5 border border-neon-green/30 rounded-md bg-black/60 group
-                         hover:border-neon-green/70 transition-[border-color,box-shadow] duration-400
-                         hover:shadow-[0_0_20px_rgba(0,255,179,0.12)]"
-            >
-              {/* Category label */}
-              <div className="flex items-center gap-3 mb-5">
-                <span className="text-neon-green/40 text-sm font-orbitron">
-                  {categoryIcons[category]}
-                </span>
-                <div>
-                  <p className="text-xs text-neon-green/40 tracking-[0.2em] mb-0.5">
-                    // CATEGORY {String(catIndex + 1).padStart(2, "0")}
-                  </p>
-                  <h3 className="text-xs font-bold tracking-widest text-neon-green font-orbitron">
-                    {category.toUpperCase()}
-                  </h3>
-                </div>
-                {/* Animated top-right corner dot */}
-                <motion.div
-                  className="ml-auto w-1.5 h-1.5 rounded-full bg-neon-green"
-                  animate={{ opacity: [0.3, 1, 0.3] }}
-                  transition={{ duration: 2, delay: catIndex * 0.3, repeat: Infinity }}
-                />
-              </div>
-
-              {/* Border draw on left */}
+          {entries.map(([category, items], catIndex) => {
+            const isLastOdd = catIndex === entries.length - 1 && entries.length % 3 !== 0;
+            return (
               <motion.div
-                className="absolute left-0 top-0 bottom-0 w-px bg-neon-green"
-                initial={{ scaleY: 0 }}
-                whileInView={{ scaleY: 1 }}
-                transition={{ duration: 0.5, delay: catIndex * 0.1, ease: "easeOut" }}
-                style={{ transformOrigin: "top" }}
-                viewport={{ once: true }}
-              />
-
-              {/* Skills */}
-              <motion.div
-                className="flex flex-wrap gap-2"
-                variants={{ visible: { transition: { staggerChildren: 0.06 } } }}
+                key={category}
+                variants={cardVariants}
+                className={`relative p-5 border border-neon-green/30 rounded-md bg-black/60 group
+                           hover:border-neon-green/70 transition-[border-color,box-shadow] duration-400
+                           hover:shadow-[0_0_20px_rgba(0,255,179,0.12)]
+                           ${isLastOdd ? "lg:col-span-3 lg:max-w-sm lg:mx-auto w-full" : ""}`}
               >
-                {items.map((skill) => (
-                  <motion.span
-                    key={skill}
-                    variants={pillVariants}
-                    transition={{ duration: 0.3, ease: "backOut" }}
-                    className="inline-flex items-center gap-2 px-3 py-1.5
-                               border border-neon-green/25 rounded-full text-xs font-mono
-                               text-neon-green/80 bg-black/80
-                               hover:bg-neon-green/10 hover:border-neon-green hover:text-neon-green
-                               hover:shadow-[0_0_10px_rgba(0,255,179,0.2)]
-                               cursor-default transition-all duration-250 group/pill"
-                  >
-                    <span className="text-sm text-neon-green/60 group-hover/pill:text-neon-green transition-colors duration-200">
-                      {skillIcons[skill]}
-                    </span>
-                    <span>{skill}</span>
-                  </motion.span>
-                ))}
+                {/* Category label */}
+                <div className="flex items-center gap-3 mb-5">
+                  <span className="text-neon-green/40 text-sm font-orbitron">
+                    {categoryIcons[category]}
+                  </span>
+                  <div>
+                    <p className="text-xs text-neon-green/40 tracking-[0.2em] mb-0.5">
+                      // CATEGORY {String(catIndex + 1).padStart(2, "0")}
+                    </p>
+                    <h3 className="text-xs font-bold tracking-widest text-neon-green font-orbitron">
+                      {category.toUpperCase()}
+                    </h3>
+                  </div>
+                  <motion.div
+                    className="ml-auto w-1.5 h-1.5 rounded-full bg-neon-green"
+                    animate={{ opacity: [0.3, 1, 0.3] }}
+                    transition={{ duration: 2, delay: catIndex * 0.3, repeat: Infinity }}
+                  />
+                </div>
+
+                {/* Border draw on left */}
+                <motion.div
+                  className="absolute left-0 top-0 bottom-0 w-px bg-neon-green"
+                  initial={{ scaleY: 0 }}
+                  whileInView={{ scaleY: 1 }}
+                  transition={{ duration: 0.5, delay: catIndex * 0.1, ease: "easeOut" }}
+                  style={{ transformOrigin: "top" }}
+                  viewport={{ once: true }}
+                />
+
+                {/* Skills */}
+                <motion.div
+                  className="flex flex-wrap gap-2"
+                  variants={{ visible: { transition: { staggerChildren: 0.06 } } }}
+                >
+                  {items.map((skill) => (
+                    <motion.span
+                      key={skill}
+                      variants={pillVariants}
+                      transition={{ duration: 0.3, ease: "backOut" }}
+                      className="inline-flex items-center gap-2 px-3 py-1.5
+                                 border border-neon-green/25 rounded-full text-xs font-mono
+                                 text-neon-green/80 bg-black/80
+                                 hover:bg-neon-green/10 hover:border-neon-green hover:text-neon-green
+                                 hover:shadow-[0_0_10px_rgba(0,255,179,0.2)]
+                                 cursor-default transition-all duration-250 group/pill"
+                    >
+                      {skillIcons[skill] && (
+                        <span className="text-sm text-neon-green/60 group-hover/pill:text-neon-green transition-colors duration-200">
+                          {skillIcons[skill]}
+                        </span>
+                      )}
+                      <span>{skill}</span>
+                    </motion.span>
+                  ))}
+                </motion.div>
               </motion.div>
-            </motion.div>
-          ))}
+            );
+          })}
         </motion.div>
       </div>
     </section>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import HeroSection from './components/HeroSection';
 import AboutSection from './components/AboutSection';
 import ExperienceSection from './components/ExperienceSection';
+import FormationsSection from './components/FormationsSection';
 import ProjectsSection from './components/ProjectsSection';
 import SkillsSection from './components/SkillsSection';
 import ContactSection from './components/ContactSection';
@@ -56,6 +57,7 @@ const App: React.FC = () => {
             <HeroSection />
             <AboutSection />
             <ExperienceSection />
+            <FormationsSection />
             <ProjectsSection />
             <SkillsSection />
             <ContactSection />
