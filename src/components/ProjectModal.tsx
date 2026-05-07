@@ -150,7 +150,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
 
                 {/* Title */}
                 <h2 className="text-2xl md:text-3xl font-orbitron font-bold text-white leading-tight">
-                  <GlitchText text={project.title} delay={5} />
+                  <GlitchText text={project.title} delay={-13} />
                 </h2>
 
                 {/* Description */}

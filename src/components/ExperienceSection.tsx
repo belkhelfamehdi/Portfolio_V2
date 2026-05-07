@@ -16,40 +16,40 @@ const experiences: Experience[] = [
   {
     id: "mga",
     company: "MGA",
-    role: "Développeur Fullstack",
+    role: "Fullstack Developer",
     type: "ALTERNANCE",
     period: "09/2025 — 09/2026",
     current: true,
     stack: ["Spring Boot", "React", "TypeScript", "TailwindCSS", "PostgreSQL", "MySQL", "GitLab CI", "WordPress", "WooCommerce", "PHP"],
     highlights: [
-      "ERP interne sur mesure : suivi des commandes, devis, facturation, stocks et tableau de bord reporting — architecture modulaire pensée pour évoluer.",
-      "Développement et mise en production de DistriResto (WooCommerce) : catalogue produits, commandes, paiements Stripe, sécurisation SSL et protection anti-spam.",
+      "Built a custom internal ERP centralizing order tracking, quotes, invoicing, inventory and a reporting dashboard — modular architecture designed to scale.",
+      "Developed and shipped DistriResto (WooCommerce): product catalogue, order management, Stripe payments, SSL security and anti-spam protection.",
     ],
   },
   {
     id: "isatis",
     company: "ISATIS",
-    role: "Développeur Fullstack",
+    role: "Fullstack Developer",
     type: "STAGE",
     period: "01/2024 — 05/2024",
     current: false,
     stack: ["Python", "JavaScript", "Odoo", "PostgreSQL"],
     highlights: [
-      "Module de planification de production intégré à l'ERP Odoo : calcul des besoins matières, ordonnancement des fabrications, gestion des capacités atelier.",
-      "Livré et utilisé en production — remplacement d'un processus 100% manuel par un outil directement intégré à l'environnement de travail client.",
+      "Built a production planning module integrated into the client's Odoo ERP: raw material needs calculation, manufacturing order scheduling and workshop capacity management.",
+      "Delivered to production — replaced a fully manual process with a tool embedded directly in the client's existing workflow.",
     ],
   },
   {
     id: "chu",
     company: "CHU Béjaïa",
-    role: "Développeur Fullstack",
+    role: "Fullstack Developer",
     type: "STAGE",
     period: "01/2023 — 06/2023",
     current: false,
-    stack: ["Laravel 13", "Vue.js 3", "Inertia.js", "TailwindCSS", "MySQL", "Docker"],
+    stack: ["Laravel", "PHP", "Vue.js 3", "Inertia.js", "TailwindCSS", "MySQL", "Docker"],
     highlights: [
-      "Refonte complète du système de gestion interne : dossiers patients, plannings soignants, stocks pharmacie, chambres, banque de sang et facturation.",
-      "Remplacement d'une application PHP procédurale par une solution moderne et centralisée pour les équipes médicales et administratives.",
+      "Full redesign of the hospital's internal management system: patient records, staff scheduling, pharmacy inventory, room assignments, blood bank and billing.",
+      "Replaced a legacy procedural PHP application with a modern unified platform for medical and administrative teams.",
     ],
   },
 ];
@@ -205,7 +205,7 @@ const ExperienceSection: React.FC = () => {
             <div className="h-px flex-1 bg-neon-green/20" />
           </div>
           <p className="text-xs text-neon-green/40 tracking-widest">
-            SYSTEM.LOG &gt;&gt; experience.load() — {experiences.length} MISSIONS FOUND
+            SYSTEM.LOG &gt;&gt; experience.load() — {experiences.length} MISSIONS COMPLETED
           </p>
         </motion.div>
 

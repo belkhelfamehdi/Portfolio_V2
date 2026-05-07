@@ -4,14 +4,13 @@ export interface NavigationItem {
 }
 
 export const leftNavigation: NavigationItem[] = [
-  { label: "//01. <Portfolio/>",   href: "#portfolio" },
-  { label: "//02. <Experience/>",  href: "#experience" },
-  { label: "//03. <Projects/>",    href: "#projects" },
+  { label: "//01. <Experience/>",  href: "#experience" },
+  { label: "//02. <Projects/>",    href: "#projects" },
 ];
 
 export const rightNavigation: NavigationItem[] = [
-  { label: "//04. <Skills/>",   href: "#skills" },
-  { label: "//05. <Contact/>",  href: "#contact" },
+  { label: "//03. <Skills/>",   href: "#skills" },
+  { label: "//04. <Contact/>",  href: "#contact" },
 ];
 
 export const typewriterWords = [
