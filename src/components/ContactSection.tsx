@@ -1,13 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { FaLinkedinIn, FaGithub, FaGoogle } from "react-icons/fa";
 import { contacts } from "../constants/content";
 
-const Fa = (await import("react-icons/fa")).default as unknown as Record<string, React.ComponentType<{ className?: string }>>;
-
 const iconMap: Record<string, React.ReactElement> = {
-  linkedin: React.createElement(Fa.FaLinkedinIn, { className: "w-6 h-6" }),
-  github: React.createElement(Fa.FaGithub, { className: "w-6 h-6" }),
-  gmail: React.createElement(Fa.FaGoogle, { className: "w-6 h-6" }),
+  linkedin: React.createElement(FaLinkedinIn, { className: "w-6 h-6" }),
+  github: React.createElement(FaGithub, { className: "w-6 h-6" }),
+  gmail: React.createElement(FaGoogle, { className: "w-6 h-6" }),
 };
 
 const ContactSection: React.FC = () => {

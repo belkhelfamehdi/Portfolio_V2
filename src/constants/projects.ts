@@ -22,13 +22,13 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: "distriresto",
-    title: "Distriresti – E-Commerce for Food Wholesaler",
+    title: "Distriresto – E-Commerce for Food Wholesaler",
     description:
-      "A professional e-commerce platform built for Distriresti, a food wholesaler company. Features product catalog management, online ordering system, customer management, order tracking, inventory management, and a comprehensive admin dashboard for managing the entire wholesale business operations.",
+      "A professional e-commerce platform built for Distriresto, a food wholesaler company. Features product catalog management, online ordering system, customer management, order tracking, inventory management, and a comprehensive admin dashboard for managing the entire wholesale business operations.",
     stack: "WordPress, WooCommerce, PHP, MySQL, JavaScript",
     image: Project10Img,
     role: "WordPress Developer",
-    link: "#",
+    link: "https://www.distriresto.fr",
   },
   {
     id: "logistics-control-center",
@@ -38,7 +38,7 @@ export const projects: Project[] = [
     stack: "React, TypeScript, TailwindCSS, Spring Boot, Kafka, Eureka, Microservices, PostgreSQL",
     image: Project9Img,
     role: "Frontend Lead & UI/UX Designer",
-    link: "https://github.com/belkhelfamehdi/logistics-control-center",
+    link: "https://github.com/belkhelfamehdi/Logistics-Flow-Platform",
   },
   {
     id: "billard",
@@ -58,7 +58,7 @@ export const projects: Project[] = [
     stack: "TypeScript, Next.js, TailwindCSS, Clerk Auth, Stream.io",
     image: Project4Img,
     role: "FullStack Developer",
-    link: "https://anchatty-git-master-belkhelfamehdis-projects.vercel.app/",
+    link: "https://anchatty.mehdibelkhelfa.com",
   },
   {
     id: "yalla-interview",
@@ -68,7 +68,7 @@ export const projects: Project[] = [
     stack: "React, Node.js, TailwindCSS, MongoDB, Gemini API",
     image: Project5Img,
     role: "FullStack Developer",
-    link: "https://yalla-interview-frontend-git-master-belkhelfamehdis-projects.vercel.app/",
+    link: "https://yalla-interview.mehdibelkhelfa.com",
   },
   {
     id: "erp-module",
@@ -95,17 +95,17 @@ export const projects: Project[] = [
     title: "Clinical Management System",
     description:
       "A modernized clinical management system for healthcare facilities. Handles patient management, employee management, pharmacy, room management, blood bank, invoicing, leave management, and consultation management. Built with Laravel and Vue 3 using Inertia.js for seamless SPA experience.",
-    stack: "Laravel Vue.js, Inertia.js, TailwindCSS, MySQL, Docker",
+    stack: "Laravel, Vue 3, Inertia.js, TailwindCSS, MySQL, Docker",
     image: Project6Img,
     role: "FullStack Developer",
-    link: "https://github.com/belkhelfamehdi/clinical-management",
+    link: "https://github.com/belkhelfamehdi/clinical-management-laravel",
   },
   {
     id: "parkmel-mobile",
     title: "ParkMEL Mobile – Real-time Parking Finder",
     description:
       "A cross-platform mobile application for finding available parking spots in the Lille metropolitan area. Features real-time parking availability from the Lille Métropole Open Data API, interactive map with clustered markers, favorites, search functionality, and navigation integration. Built with React Native, Expo, and TypeScript.",
-    stack: "React Native, Expo, TypeScript, NativeWind, Axios",
+    stack: "React Native, Expo, TypeScript, NativeWind, Open Data API",
     image: Project11Img,
     role: "FullStack Developer",
     link: "https://github.com/belkhelfamehdi/parkmel-mobile",
@@ -115,7 +115,7 @@ export const projects: Project[] = [
     title: "ParkMEL – Real-time Parking Finder",
     description:
       "A web application for finding available parking spots in the Lille metropolitan area. Features an interactive Leaflet map with clustered markers, real-time data from the Lille Métropole Open Data API (auto-refreshed every 5 minutes), sortable/searchable parking lists, geolocation support, and Google Maps navigation integration.",
-    stack: "Vue, TypeScript, Leaflet, TailwindCSS, Pinia",
+    stack: "Vue, TypeScript, Leaflet, TailwindCSS",
     image: Project8Img,
     role: "Frontend Developer",
     link: "https://github.com/belkhelfamehdi/ParkMEL",
