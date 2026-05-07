@@ -8,6 +8,7 @@ import Project8Img from "../assets/projects/parkmel.png";
 import Project9Img from "../assets/projects/logistic.png";
 import Project10Img from "../assets/projects/Distriresto.png";
 import Project11Img from "../assets/projects/ParkMEL-Mobile.png";
+import Project12Img from "../assets/projects/Livresto.png";
 
 export interface Project {
   id: string;
@@ -20,6 +21,16 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  {
+    id: "bl-preparation-system",
+    title: "BL Preparation System – Warehouse Management",
+    description:
+      "A warehouse management mobile app with backend API for managing delivery order (BL) preparation. Features role-based access for Responsables, Préparateurs, and Admins, barcode scanning, real-time preparation tracking with quantity management, and report generation. Backend connects to legacy HFSQL database with SQLite for session/reporting data.",
+    stack: "Python, FastAPI, HFSQL, SQLite, React Native, Expo, TypeScript",
+    image: Project12Img,
+    role: "FullStack Developer",
+    link: "https://github.com/belkhelfamehdi/BL-APP",
+  },
   {
     id: "distriresto",
     title: "Distriresto – E-Commerce for Food Wholesaler",
