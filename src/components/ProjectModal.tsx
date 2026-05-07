@@ -3,6 +3,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import { type Project } from "../constants/projects";
 import GlitchText from "./GlitchText";
 
+const getLinkType = (link: string): "live" | "source" | "private" => {
+  if (link === "#") return "private";
+  if (/github\.com|gitlab\.com/i.test(link)) return "source";
+  return "live";
+};
+
 interface ProjectModalProps {
   projects: Project[];
   currentIndex: number | null;
@@ -124,15 +130,11 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
 
                 {/* Status badge */}
                 <div className="absolute top-3 left-3 font-mono">
-                  <span
-                    className={`text-[10px] tracking-widest px-2 py-1 rounded border ${
-                      project.link !== "#"
-                        ? "border-neon-green text-neon-green"
-                        : "border-gray-700 text-gray-500"
-                    }`}
-                  >
-                    {project.link !== "#" ? "● LIVE" : "● PRIVATE"}
-                  </span>
+                  {{
+                    live:    <span className="text-[10px] tracking-widest px-2 py-1 rounded border border-neon-green text-neon-green">● LIVE</span>,
+                    source:  <span className="text-[10px] tracking-widest px-2 py-1 rounded border border-blue-400/70 text-blue-400">● SOURCE</span>,
+                    private: <span className="text-[10px] tracking-widest px-2 py-1 rounded border border-gray-700 text-gray-500">● PRIVATE</span>,
+                  }[getLinkType(project.link)]}
                 </div>
 
                 {/* ESC hint */}
@@ -185,34 +187,42 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
                 </div>
 
                 {/* CTA */}
-                {project.link !== "#" ? (
-                  <motion.a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-3 self-start mt-auto px-5 py-2.5
-                               border border-neon-green rounded text-sm text-neon-green
-                               relative overflow-hidden group"
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.97 }}
-                  >
-                    <span className="absolute inset-0 bg-neon-green scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300" />
-                    <span className="relative z-10 group-hover:text-black transition-colors duration-300">
-                      VIEW PROJECT
-                    </span>
-                    <motion.span
-                      className="relative z-10 group-hover:text-black transition-colors duration-300"
-                      animate={{ x: [0, 4, 0] }}
-                      transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                {(() => {
+                  const type = getLinkType(project.link);
+                  if (type === "private") return (
+                    <p className="mt-auto text-xs text-gray-600 font-mono tracking-wider">
+                      // SOURCE IS PRIVATE
+                    </p>
+                  );
+                  const isSource = type === "source";
+                  return (
+                    <motion.a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`inline-flex items-center gap-3 self-start mt-auto px-5 py-2.5
+                                 border rounded text-sm relative overflow-hidden group ${
+                                   isSource
+                                     ? "border-blue-400/70 text-blue-400"
+                                     : "border-neon-green text-neon-green"
+                                 }`}
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.97 }}
                     >
-                      →
-                    </motion.span>
-                  </motion.a>
-                ) : (
-                  <p className="mt-auto text-xs text-gray-600 font-mono tracking-wider">
-                    // SOURCE IS PRIVATE
-                  </p>
-                )}
+                      <span className={`absolute inset-0 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 ${isSource ? "bg-blue-400" : "bg-neon-green"}`} />
+                      <span className="relative z-10 group-hover:text-black transition-colors duration-300">
+                        {isSource ? "VIEW SOURCE" : "VIEW PROJECT"}
+                      </span>
+                      <motion.span
+                        className="relative z-10 group-hover:text-black transition-colors duration-300"
+                        animate={{ x: [0, 4, 0] }}
+                        transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                      >
+                        →
+                      </motion.span>
+                    </motion.a>
+                  );
+                })()}
               </div>
             </div>
           </motion.div>
