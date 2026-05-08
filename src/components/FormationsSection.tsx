@@ -1,12 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-interface Formation {
+  interface Formation {
   id: string;
   school: string;
   degree: string;
   field: string;
-  type: "MASTER" | "LICENCE" | "BTS" | "DUT" | "BUT" | "INGENIEUR" | "CERTIFICATION";
+  type: "MASTER" | "BACHELOR" | "BTS" | "DUT" | "BUT" | "ENGINEERING" | "CERTIFICATION";
   period: string;
   current: boolean;
   location: string;
@@ -21,13 +21,13 @@ const formations: Formation[] = [
     degree: "Master Informatique",
     field: "Expert en développement Fullstack",
     type: "MASTER",
-    period: "10/2024 — EN COURS",
+    period: "10/2024 — ONGOING",
     current: true,
     location: "Lille",
     highlights: [
-      "Formation en cours — spécialisation fullstack, architecture logicielle et technologies numériques.",
+      "Ongoing — fullstack specialization, software architecture and digital technologies.",
     ],
-    skills: ["Fullstack", "Architecture", "Cloud", "DevOps", "Technologies Numériques"],
+    skills: ["Fullstack", "Architecture", "Cloud", "DevOps", "Digital Technologies"],
   },
   {
     id: "bejaia-master",
@@ -39,30 +39,30 @@ const formations: Formation[] = [
     current: false,
     location: "Béjaïa, Algérie",
     highlights: [
-      "Diplômé — architecture logicielle, qualité du code, méthodes agiles, DevOps et sécurité.",
+      "Graduated — software architecture, code quality, agile methods, DevOps and security.",
     ],
-    skills: ["Architecture", "Agile", "DevOps", "Sécurité", "Qualité logicielle"],
+    skills: ["Architecture", "Agile", "DevOps", "Security", "Code Quality"],
   },
   {
-    id: "bejaia-licence",
+    id: "bejaia-bachelor",
     school: "Université de Béjaïa",
-    degree: "Licence Informatique",
-    field: "Systèmes Informatiques",
-    type: "LICENCE",
+    degree: "Bachelor in Computer Science",
+    field: "Computer Systems",
+    type: "BACHELOR",
     period: "09/2019 — 2022",
     current: false,
     location: "Béjaïa, Algérie",
     highlights: [
-      "Diplômé — programmation, algorithmique, réseaux, bases de données et systèmes.",
+      "Graduated — programming, algorithms, networks, databases and systems.",
     ],
-    skills: ["Algorithmique", "Réseaux", "BDD", "Systèmes", "Linux"],
+    skills: ["Algorithms", "Networks", "DB", "Systems", "Linux"],
   },
 ];
 
 const TYPE_STYLES: Record<Formation["type"], { border: string; text: string }> = {
   MASTER:       { border: "border-neon-green",   text: "text-neon-green" },
-  INGENIEUR:    { border: "border-neon-green",   text: "text-neon-green" },
-  LICENCE:      { border: "border-gray-500",     text: "text-gray-400" },
+  ENGINEERING:  { border: "border-neon-green",   text: "text-neon-green" },
+  BACHELOR:     { border: "border-gray-500",     text: "text-gray-400" },
   BTS:          { border: "border-gray-500",     text: "text-gray-400" },
   DUT:          { border: "border-gray-500",     text: "text-gray-400" },
   BUT:          { border: "border-gray-500",     text: "text-gray-400" },
@@ -185,7 +185,7 @@ const FormationsSection: React.FC = () => {
             <div className="h-px flex-1 bg-neon-green/20" />
           </div>
           <p className="text-xs text-neon-green/40 tracking-widest">
-            SYSTEM.LOG &gt;&gt; formations.load() — {formations.length} DIPLÔMES CHARGÉS
+            SYSTEM.LOG &gt;&gt; formations.load() — {formations.length} DEGREES LOADED
           </p>
         </motion.div>
 

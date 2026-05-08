@@ -170,9 +170,9 @@ const HeroSection: React.FC = () => {
       </nav>
 
       {/* ─── Hero Body ─── */}
-      <div className="relative z-20 flex flex-col md:flex-row items-center justify-between px-4 md:px-24 flex-1">
+      <div className="relative z-20 flex flex-col md:flex-row items-start md:items-center justify-between px-4 md:px-16 lg:px-24 flex-1">
         {/* Left: Name & Typewriter */}
-        <section className="my-10 md:my-0 text-center md:text-left max-w-xl">
+        <section className="my-10 md:my-0 text-center md:text-left max-w-2xl">
           {/* Subtitle tag */}
           <motion.p
             className="text-gray-500 font-mono text-lg mb-5"
@@ -207,7 +207,7 @@ const HeroSection: React.FC = () => {
                 }}
               >
                 <h1
-                  className="text-[clamp(2.8rem,6vw,5rem)] font-bold font-orbitron text-white leading-tight relative inline-block"
+                  className="text-[clamp(2.5rem,5.5vw,4.8rem)] md:text-[clamp(3rem,6vw,5rem)] font-bold font-orbitron text-white leading-tight relative inline-block"
                   data-text={word}
                 >
                   <span className="relative z-10">
