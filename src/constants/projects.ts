@@ -32,16 +32,6 @@ export const projects: Project[] = [
     link: "https://github.com/belkhelfamehdi/BL-APP",
   },
   {
-    id: "distriresto",
-    title: "Distriresto – E-Commerce for Food Wholesaler",
-    description:
-      "A professional e-commerce platform built for Distriresto, a food wholesaler company. Features product catalog management, online ordering system, customer management, order tracking, inventory management, and a comprehensive admin dashboard for managing the entire wholesale business operations.",
-    stack: "WordPress, WooCommerce, PHP, MySQL, JavaScript",
-    image: Project10Img,
-    role: "WordPress Developer",
-    link: "https://www.distriresto.fr",
-  },
-  {
     id: "logistics-control-center",
     title: "Logistics Control Center – Microservices Dashboard",
     description:
@@ -130,5 +120,15 @@ export const projects: Project[] = [
     image: Project8Img,
     role: "Frontend Developer",
     link: "https://github.com/belkhelfamehdi/ParkMEL",
+  },
+    {
+    id: "distriresto",
+    title: "Distriresto – E-Commerce for Food Wholesaler",
+    description:
+      "A professional e-commerce platform built for Distriresto, a food wholesaler company. Features product catalog management, online ordering system, customer management, order tracking, inventory management, and a comprehensive admin dashboard for managing the entire wholesale business operations.",
+    stack: "WordPress, WooCommerce, PHP, MySQL, JavaScript",
+    image: Project10Img,
+    role: "WordPress Developer",
+    link: "https://www.distriresto.fr",
   },
 ];
