@@ -4,7 +4,6 @@ declare module 'react-icons/si' {
   export const SiTypescript: IconType;
   export const SiPhp: IconType;
   export const SiReact: IconType;
-  export const SiAngular: IconType;
   export const SiNextdotjs: IconType;
   export const SiTailwindcss: IconType;
   export const SiNodedotjs: IconType;
@@ -22,7 +21,6 @@ declare module 'react-icons/si' {
   export const SiMysql: IconType;
   export const SiWordpress: IconType;
   export const SiExpo: IconType;
-  export const SiHtml5: IconType;
   export const SiGithub: IconType;
   export const SiNginx: IconType;
   export const SiPostman: IconType;

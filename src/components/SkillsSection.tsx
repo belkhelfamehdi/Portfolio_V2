@@ -1,11 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
 import {
-  SiJavascript, SiTypescript, SiPhp, SiReact, SiAngular, SiNextdotjs,
+  SiJavascript, SiTypescript, SiPhp, SiReact, SiNextdotjs,
   SiTailwindcss, SiNodedotjs, SiSpringboot, SiLaravel, SiPostgresql,
   SiExpress, SiGit, SiGitlab, SiDocker, SiFirebase,
   SiPython, SiVuedotjs, SiMongodb, SiMysql, SiWordpress, SiExpo,
-  SiHtml5, SiGithub, SiNginx, SiPostman, SiLinux,
+  SiGithub, SiNginx, SiPostman, SiLinux,
   SiKubernetes, SiFedora,
 } from "react-icons/si";
 import { FaJava, FaWindows } from "react-icons/fa";
@@ -16,9 +16,7 @@ const skillIcons: Record<string, React.ReactElement> = {
   Java:           <FaJava />,
   PHP:            <SiPhp />,
   Python:         <SiPython />,
-  "HTML/CSS":     <SiHtml5 />,
   React:          <SiReact />,
-  Angular:        <SiAngular />,
   "Next.js":      <SiNextdotjs />,
   "Vue.js":       <SiVuedotjs />,
   TailwindCSS:    <SiTailwindcss />,
@@ -48,7 +46,7 @@ const skillIcons: Record<string, React.ReactElement> = {
 
 const skills: Record<string, string[]> = {
   Languages:        ["JavaScript", "TypeScript", "Java", "PHP", "Python", "SQL"],
-  Frontend:         ["React", "Angular", "Next.js", "Vue.js", "TailwindCSS", "HTML/CSS"],
+  Frontend:         ["React", "Next.js", "Vue.js", "TailwindCSS"],
   Backend:          ["Node.js", "Spring Boot", "Laravel", "Express", "Odoo"],
   Mobile:           ["React Native", "NativeWind", "Expo"],
   Databases:        ["PostgreSQL", "MySQL", "MongoDB", "Firebase"],

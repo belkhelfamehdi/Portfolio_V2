@@ -17,7 +17,7 @@ const FILE_SYSTEM: FileSystem = {
   "/home/me/projects": [],
   "/home/me/about.txt": "Mehdi Belkhelfa | FullStack Developer | 24y | Lille, France",
   "/home/me/contact.info": "Email: mehdibelkhelfa6@gmail.com | LinkedIn: mehdibelkhelfa",
-  "/home/me/skills/frontend.txt": "React.js, Angular, TypeScript, TailwindCSS, Next.js",
+  "/home/me/skills/frontend.txt": "React.js, TypeScript, TailwindCSS, Next.js, Vue.js",
   "/home/me/skills/backend.txt": "Node.js, Springboot, Laravel, PostgreSQL, Express",
   "/home/me/skills/tools.txt": "Git, Docker, Firebase, CI/CD",
   "/home/me/cv.pdf": "CV file - type 'cat cv' to view",
@@ -36,7 +36,7 @@ const CV_CONTENT = `
 
 💻 SKILLS
 ─────────
-Frontend:  React.js, Angular, TypeScript, TailwindCSS, Next.js
+Frontend:  React.js, TypeScript, TailwindCSS, Next.js, Vue.js
 Backend:   Node.js, Springboot, Laravel, PostgreSQL
 Tools:     Git, Docker, Firebase, CI/CD
 
