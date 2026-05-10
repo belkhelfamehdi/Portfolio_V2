@@ -9,6 +9,7 @@ import Project9Img from "../assets/projects/logistic.png";
 import Project10Img from "../assets/projects/Distriresto.png";
 import Project11Img from "../assets/projects/ParkMEL-Mobile.png";
 import Project12Img from "../assets/projects/Livresto.png";
+import Project13Img from "../assets/projects/dinobot.webp";
 
 export interface Project {
   id: string;
@@ -130,5 +131,15 @@ export const projects: Project[] = [
     image: Project10Img,
     role: "WordPress Developer",
     link: "https://www.distriresto.fr",
+  },
+{
+    id: "dinobot",
+    title: "DinoBot – AI Study Assistant",
+    description:
+      "An educational app that helps students create smart study materials instantly. Generate revision sheets, interactive flashcards, and quizzes with AI. Features a clean modern design with swipeable cards, progress tracking, and beautiful course content viewer with markdown support.",
+    stack: "Next.js, TypeScript, TailwindCSS, Groq AI",
+    image: Project13Img,
+    role: "Frontend Lead & UI/UX Designer",
+    link: "https://dinobot.mehdibelkhelfa.com",
   },
 ];
