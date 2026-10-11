@@ -9,6 +9,7 @@ import {
   rightNavigation,
   typewriterWords,
 } from "../constants/navigation";
+import { isPrerender } from "../constants/runtime";
 
 /* ─── Floating ambient particles ──────────────────── */
 const PARTICLES = [
@@ -193,11 +194,14 @@ const HeroSection: React.FC = () => {
           </motion.p>
 
           {/* Name — word by word stagger */}
-          <div className="md:ml-14 overflow-hidden">
+          <h1 className="md:ml-14 overflow-hidden">
+            {/* Real heading text; the animated words below are decorative */}
+            <span className="sr-only">Mehdi Belkhelfa</span>
             {["BELKHELFA", "MEHDI"].map((word, wi) => (
-              <motion.div
+              <motion.span
                 key={wi}
-                className="overflow-hidden"
+                aria-hidden="true"
+                className="block overflow-hidden"
                 initial={{ y: 80, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{
@@ -206,7 +210,7 @@ const HeroSection: React.FC = () => {
                   ease: [0.22, 1, 0.36, 1],
                 }}
               >
-                <h1
+                <span
                   className="text-[clamp(2.5rem,5.5vw,4.8rem)] md:text-[clamp(3rem,6vw,5rem)] font-bold font-orbitron text-white leading-tight relative inline-block"
                   data-text={word}
                 >
@@ -216,10 +220,10 @@ const HeroSection: React.FC = () => {
                   <span className="absolute inset-0 blur-xl opacity-40 text-neon-green z-0 select-none">
                     {word}
                   </span>
-                </h1>
-              </motion.div>
+                </span>
+              </motion.span>
             ))}
-          </div>
+          </h1>
 
           <motion.p
             className="text-gray-500 font-mono text-md md:ml-10 mt-1"
@@ -239,15 +243,20 @@ const HeroSection: React.FC = () => {
           >
             <span>&lt;p&gt;</span>
             <span className="text-neon-green" style={{ textShadow: "0 0 12px rgba(0,255,179,0.5)" }}>
-              <Typewriter
-                words={typewriterWords}
-                loop={true}
-                cursor
-                cursorStyle="_"
-                typeSpeed={65}
-                deleteSpeed={40}
-                delaySpeed={1200}
-              />
+              {/* The typewriter renders nothing without JS, so the static HTML gets the first word */}
+              {isPrerender ? (
+                typewriterWords[0]
+              ) : (
+                <Typewriter
+                  words={typewriterWords}
+                  loop={true}
+                  cursor
+                  cursorStyle="_"
+                  typeSpeed={65}
+                  deleteSpeed={40}
+                  delaySpeed={1200}
+                />
+              )}
             </span>
             <span>&lt;/p&gt;</span>
           </motion.div>

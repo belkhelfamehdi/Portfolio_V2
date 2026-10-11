@@ -1,7 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import TerminalSim from './TerminalSim';
-import Photo from '../assets/me.jpeg';
+
+// Served from public/ so the URL stays stable for og:image and JSON-LD
+const Photo = '/mehdi-belkhelfa.jpg';
 
 const containerVariants = {
   hidden: {},
@@ -112,9 +114,9 @@ const AboutSection: React.FC = () => {
           className="mb-6 flex items-center gap-4"
         >
           <div className="h-px flex-1 bg-neon-green/20" />
-          <span className="text-xs tracking-[0.3em] text-neon-green border border-neon-green/30 px-3 py-1 rounded">
+          <h2 className="text-xs tracking-[0.3em] text-neon-green border border-neon-green/30 px-3 py-1 rounded">
             [ IDENTITY.CONSOLE ]
-          </span>
+          </h2>
           <div className="h-px flex-1 bg-neon-green/20" />
         </motion.div>
 
@@ -142,7 +144,7 @@ const AboutSection: React.FC = () => {
               <div className="relative group">
                 <motion.img
                   src={Photo}
-                  alt="Belkhelfa Mehdi"
+                  alt="Mehdi Belkhelfa"
                   className="w-40 h-40 md:w-48 md:h-48 object-cover rounded-sm border border-neon-green"
                   style={{ boxShadow: "0 0 20px rgba(0,255,179,0.3)" }}
                   initial={{ filter: "grayscale(100%) brightness(0.6)" }}

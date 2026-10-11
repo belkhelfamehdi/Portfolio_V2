@@ -199,9 +199,9 @@ const ExperienceSection: React.FC = () => {
         >
           <div className="flex items-center gap-4 w-full max-w-md">
             <div className="h-px flex-1 bg-neon-green/20" />
-            <span className="text-xs tracking-[0.3em] text-neon-green border border-neon-green/30 px-3 py-1 rounded whitespace-nowrap">
+            <h2 className="text-xs tracking-[0.3em] text-neon-green border border-neon-green/30 px-3 py-1 rounded whitespace-nowrap">
               [ CAREER.TIMELINE ]
-            </span>
+            </h2>
             <div className="h-px flex-1 bg-neon-green/20" />
           </div>
           <p className="text-xs text-neon-green/40 tracking-widest">

@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
+import { isPrerender } from "../constants/runtime";
 
 interface GlitchTextProps {
   text: string;
@@ -11,7 +12,8 @@ const GlitchText: React.FC<GlitchTextProps> = ({
   delay = 0,
   className = "",
 }) => {
-  const [display, setDisplay] = useState("");
+  // Static HTML gets the final text; in the browser the glitch still starts from empty
+  const [display, setDisplay] = useState(isPrerender ? text : "");
   const [glitching, setGlitching] = useState(true);
   const intervalRef = useRef<number | undefined>(undefined);
   const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*<>/";

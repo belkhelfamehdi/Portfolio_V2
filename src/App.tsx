@@ -8,6 +8,7 @@ import SkillsSection from './components/SkillsSection';
 import ContactSection from './components/ContactSection';
 import Intro from './components/Intro';
 import CustomCursor from './components/CustomCursor';
+import { isPrerender } from './constants/runtime';
 
 const ScrollProgress: React.FC = () => {
   const [width, setWidth] = useState(0);
@@ -50,10 +51,10 @@ const App: React.FC = () => {
           }}
         />
 
-        {!introFinished ? (
-          <Intro onFinish={() => setIntroFinished(true)} />
-        ) : (
-          <div className="relative z-10">
+        {/* The prerendered HTML carries the whole page under the intro overlay,
+            clipped to the viewport so nothing can scroll before React mounts. */}
+        {(introFinished || isPrerender) && (
+          <div className={isPrerender ? "relative z-10 h-screen overflow-hidden" : "relative z-10"}>
             <HeroSection />
             <AboutSection />
             <ExperienceSection />
@@ -63,6 +64,7 @@ const App: React.FC = () => {
             <ContactSection />
           </div>
         )}
+        {!introFinished && <Intro onFinish={() => setIntroFinished(true)} />}
       </div>
     </>
   );

@@ -60,7 +60,7 @@ export const projects: Project[] = [
     stack: "TypeScript, Next.js, TailwindCSS, Clerk Auth, Stream.io",
     image: Project4Img,
     role: "FullStack Developer",
-    link: "https://anchatty.mehdibelkhelfa.com",
+    link: "https://anchatty.vercel.app",
   },
   {
     id: "yalla-interview",
@@ -70,7 +70,7 @@ export const projects: Project[] = [
     stack: "React, Node.js, TailwindCSS, MongoDB, Gemini API",
     image: Project5Img,
     role: "FullStack Developer",
-    link: "https://yalla-interview.mehdibelkhelfa.com",
+    link: "https://yalla-interview.mbelkhelfa.com",
   },
   {
     id: "erp-module",
@@ -140,6 +140,6 @@ export const projects: Project[] = [
     stack: "Next.js, TypeScript, TailwindCSS, Groq AI",
     image: Project13Img,
     role: "Frontend Lead & UI/UX Designer",
-    link: "https://dinobot.mehdibelkhelfa.com",
+    link: "https://dino-bot-theta.vercel.app",
   },
 ];

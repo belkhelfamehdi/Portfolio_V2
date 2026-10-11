@@ -5,7 +5,7 @@ A modern, interactive portfolio to showcase my work as a Fullstack Developer wit
 ---
 
 ## 🚀 Live Demo
-[View Portfolio](https://mehdibelkhelfa.com) <!-- Replace with your deployed link -->
+[View Portfolio](https://www.mbelkhelfa.com) <!-- Replace with your deployed link -->
 
 ---
 
